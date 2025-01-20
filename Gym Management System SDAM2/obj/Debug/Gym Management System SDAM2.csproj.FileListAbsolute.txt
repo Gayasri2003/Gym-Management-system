@@ -1,0 +1,11 @@
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\bin\Debug\Gym Management System SDAM2.exe.config
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\bin\Debug\Gym Management System SDAM2.exe
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\bin\Debug\Gym Management System SDAM2.pdb
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.LoginForm.resources
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.Properties.Resources.resources
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.Register.resources
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.GenerateResource.cache
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.exe
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.pdb
