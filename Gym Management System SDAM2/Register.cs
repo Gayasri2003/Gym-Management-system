@@ -14,7 +14,7 @@ namespace Gym_Management_System_SDAM2
 {
     public partial class Register : Form
     {
-        SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-28I7HML\SQLEXPRESS;Initial Catalog=GymManagementSystem;Integrated Security=True;Trust Server Certificate=True");
+        //SqlConnection connect = new SqlConnection(@"Data Source=DESKTOP-28I7HML\SQLEXPRESS;Initial Catalog=GymManagementSystem;Integrated Security=True;Trust Server Certificate=True");
         public Register()
         {
             InitializeComponent();
@@ -42,23 +42,23 @@ namespace Gym_Management_System_SDAM2
 
         private void regBtn_Click(object sender, EventArgs e)
         {
-            if(connect.State != ConnectionState.Open)
-            {
-                try
-                {
-                    connect.Open();
-                    string checkUsername = "SELECT * FROM Users ";
-                    MessageBox.Show("Connection successful!");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Connection failed: " + ex.Message);
-                }
-                finally
-                {
-                    connect.Close();
-                }
+            //if(connect.State != ConnectionState.Open)
+            //{
+            //    try
+            //    {
+            //        connect.Open();
+            //        string checkUsername = "SELECT * FROM Users ";
+            //        MessageBox.Show("Connection successful!");
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Connection failed: " + ex.Message);
+            //    }
+            //    finally
+            //    {
+            //        connect.Close();
+            //    }
             }
         }
     }
-}
+
