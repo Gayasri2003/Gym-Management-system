@@ -60,6 +60,24 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrainerAttendence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainerAttendence.Designer.cs">
+      <DependentUpon>TrainerAttendence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerClasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainerClasses.Designer.cs">
+      <DependentUpon>TrainerClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TrainerProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TrainerProfile.Designer.cs">
+      <DependentUpon>TrainerProfile.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -70,6 +88,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainerAttendence.resx">
+      <DependentUpon>TrainerAttendence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainerClasses.resx">
+      <DependentUpon>TrainerClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TrainerProfile.resx">
+      <DependentUpon>TrainerProfile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

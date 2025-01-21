@@ -59,6 +59,21 @@ namespace Gym_Management_System_SDAM2
             //        connect.Close();
             //    }
             }
+
+        private void regPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
         }
+
+        private void genBtn2_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
     }
 
