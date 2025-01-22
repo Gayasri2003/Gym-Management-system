@@ -74,6 +74,7 @@
             this.attendLink.TabIndex = 23;
             this.attendLink.TabStop = true;
             this.attendLink.Text = "ATTENDENCE";
+            this.attendLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.attendLink_LinkClicked);
             // 
             // classLink
             // 
@@ -89,6 +90,7 @@
             this.classLink.TabIndex = 22;
             this.classLink.TabStop = true;
             this.classLink.Text = "CLASSES";
+            this.classLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.classLink_LinkClicked);
             // 
             // homeLink
             // 
@@ -104,6 +106,7 @@
             this.homeLink.TabIndex = 21;
             this.homeLink.TabStop = true;
             this.homeLink.Text = "HOME";
+            this.homeLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.homeLink_LinkClicked);
             // 
             // homeLogout
             // 
@@ -177,7 +180,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(503, 181);
+            this.dataGridView1.Size = new System.Drawing.Size(503, 197);
             this.dataGridView1.TabIndex = 26;
             // 
             // TrainerAttendence

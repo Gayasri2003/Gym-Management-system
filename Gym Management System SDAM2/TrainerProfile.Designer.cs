@@ -29,9 +29,13 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.attendLink = new System.Windows.Forms.LinkLabel();
+            this.classLink = new System.Windows.Forms.LinkLabel();
+            this.homeLink = new System.Windows.Forms.LinkLabel();
             this.homeLogout = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.trnName = new System.Windows.Forms.Label();
             this.trnLname = new System.Windows.Forms.Label();
@@ -39,15 +43,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.trnGender = new System.Windows.Forms.Label();
-            this.homeLink = new System.Windows.Forms.LinkLabel();
-            this.classLink = new System.Windows.Forms.LinkLabel();
-            this.attendLink = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.closelabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,6 +65,54 @@
             this.panel1.Size = new System.Drawing.Size(128, 491);
             this.panel1.TabIndex = 0;
             // 
+            // attendLink
+            // 
+            this.attendLink.AutoSize = true;
+            this.attendLink.BackColor = System.Drawing.Color.Transparent;
+            this.attendLink.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.attendLink.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.attendLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.attendLink.LinkColor = System.Drawing.Color.White;
+            this.attendLink.Location = new System.Drawing.Point(9, 293);
+            this.attendLink.Name = "attendLink";
+            this.attendLink.Size = new System.Drawing.Size(108, 18);
+            this.attendLink.TabIndex = 23;
+            this.attendLink.TabStop = true;
+            this.attendLink.Text = "ATTENDENCE";
+            this.attendLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.attendLink_LinkClicked);
+            // 
+            // classLink
+            // 
+            this.classLink.AutoSize = true;
+            this.classLink.BackColor = System.Drawing.Color.Transparent;
+            this.classLink.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.classLink.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.classLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.classLink.LinkColor = System.Drawing.Color.White;
+            this.classLink.Location = new System.Drawing.Point(25, 251);
+            this.classLink.Name = "classLink";
+            this.classLink.Size = new System.Drawing.Size(76, 18);
+            this.classLink.TabIndex = 22;
+            this.classLink.TabStop = true;
+            this.classLink.Text = "CLASSES";
+            this.classLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.classLink_LinkClicked);
+            // 
+            // homeLink
+            // 
+            this.homeLink.AutoSize = true;
+            this.homeLink.BackColor = System.Drawing.Color.Transparent;
+            this.homeLink.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.homeLink.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.homeLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.homeLink.LinkColor = System.Drawing.Color.White;
+            this.homeLink.Location = new System.Drawing.Point(38, 207);
+            this.homeLink.Name = "homeLink";
+            this.homeLink.Size = new System.Drawing.Size(53, 18);
+            this.homeLink.TabIndex = 21;
+            this.homeLink.TabStop = true;
+            this.homeLink.Text = "HOME";
+            this.homeLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.homeLink_LinkClicked);
+            // 
             // homeLogout
             // 
             this.homeLogout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
@@ -74,6 +122,7 @@
             this.homeLogout.TabIndex = 19;
             this.homeLogout.Text = "LOG OUT";
             this.homeLogout.UseVisualStyleBackColor = true;
+            this.homeLogout.Click += new System.EventHandler(this.homeLogout_Click);
             // 
             // label2
             // 
@@ -96,7 +145,17 @@
             this.label1.Size = new System.Drawing.Size(104, 17);
             this.label1.TabIndex = 15;
             this.label1.Text = "Logged in as: ";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Image = global::Gym_Management_System_SDAM2.Properties.Resources.icons8_user_100;
+            this.pictureBox.Location = new System.Drawing.Point(41, 9);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 13;
+            this.pictureBox.TabStop = false;
             // 
             // label3
             // 
@@ -174,51 +233,6 @@
             this.trnGender.TabIndex = 12;
             this.trnGender.Text = "Gender";
             // 
-            // homeLink
-            // 
-            this.homeLink.AutoSize = true;
-            this.homeLink.BackColor = System.Drawing.Color.Transparent;
-            this.homeLink.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.homeLink.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.homeLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.homeLink.LinkColor = System.Drawing.Color.White;
-            this.homeLink.Location = new System.Drawing.Point(38, 207);
-            this.homeLink.Name = "homeLink";
-            this.homeLink.Size = new System.Drawing.Size(53, 18);
-            this.homeLink.TabIndex = 21;
-            this.homeLink.TabStop = true;
-            this.homeLink.Text = "HOME";
-            // 
-            // classLink
-            // 
-            this.classLink.AutoSize = true;
-            this.classLink.BackColor = System.Drawing.Color.Transparent;
-            this.classLink.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.classLink.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.classLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.classLink.LinkColor = System.Drawing.Color.White;
-            this.classLink.Location = new System.Drawing.Point(25, 251);
-            this.classLink.Name = "classLink";
-            this.classLink.Size = new System.Drawing.Size(76, 18);
-            this.classLink.TabIndex = 22;
-            this.classLink.TabStop = true;
-            this.classLink.Text = "CLASSES";
-            // 
-            // attendLink
-            // 
-            this.attendLink.AutoSize = true;
-            this.attendLink.BackColor = System.Drawing.Color.Transparent;
-            this.attendLink.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.attendLink.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.attendLink.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.attendLink.LinkColor = System.Drawing.Color.White;
-            this.attendLink.Location = new System.Drawing.Point(9, 293);
-            this.attendLink.Name = "attendLink";
-            this.attendLink.Size = new System.Drawing.Size(108, 18);
-            this.attendLink.TabIndex = 23;
-            this.attendLink.TabStop = true;
-            this.attendLink.Text = "ATTENDENCE";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(151, 55);
@@ -226,17 +240,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(148, 129);
             this.pictureBox1.TabIndex = 11;
             this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.Image = global::Gym_Management_System_SDAM2.Properties.Resources.icons8_user_100;
-            this.pictureBox.Location = new System.Drawing.Point(41, 9);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(40, 36);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox.TabIndex = 13;
-            this.pictureBox.TabStop = false;
             // 
             // closelabel
             // 
@@ -271,11 +274,10 @@
             this.MinimizeBox = false;
             this.Name = "TrainerProfile";
             this.Text = "TrainerProfile";
-            this.Load += new System.EventHandler(this.TrainerProfile_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

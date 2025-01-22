@@ -21,5 +21,37 @@ namespace Gym_Management_System_SDAM2
         {
 
         }
+
+        private void homeLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Open the Home form
+            TrainerProfile homeForm = new TrainerProfile();
+            homeForm.Show();
+
+            // Close or hide the current form
+            this.Hide();
+        }
+
+        private void classLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Open the Classes form
+            TrainerClasses classesForm = new TrainerClasses();
+            classesForm.Show();
+
+            // Close or hide the current form
+            this.Hide();
+        }
+
+        private void attendLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            // Open the Attendance form
+            TrainerAttendence attendanceForm = new TrainerAttendence();
+            attendanceForm.Show();
+
+            // Close or hide the current form
+            this.Hide();
+        }
+
+        
     }
 }

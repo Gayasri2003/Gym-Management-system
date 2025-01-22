@@ -21,3 +21,5 @@ C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj
 C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.exe
 C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.pdb
 C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerProfile.resources
+C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerAttendence.resources
+C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerClasses.resources

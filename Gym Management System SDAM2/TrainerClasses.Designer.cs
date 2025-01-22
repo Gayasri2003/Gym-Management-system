@@ -39,6 +39,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.closelabel = new System.Windows.Forms.Label();
+            this.addclassBtn = new System.Windows.Forms.Button();
+            this.classdeleteBtn = new System.Windows.Forms.Button();
+            this.dateTxt = new System.Windows.Forms.Label();
+            this.timeTxt = new System.Windows.Forms.Label();
+            this.locationTxt = new System.Windows.Forms.Label();
+            this.typeTxt = new System.Windows.Forms.Label();
+            this.dateTextbox = new System.Windows.Forms.TextBox();
+            this.timeTextbox = new System.Windows.Forms.TextBox();
+            this.locationTextbox = new System.Windows.Forms.TextBox();
+            this.typeTextbox = new System.Windows.Forms.TextBox();
+            this.classIDtextbox = new System.Windows.Forms.TextBox();
+            this.classIDtext = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -94,6 +106,7 @@
             this.attendLink.TabIndex = 23;
             this.attendLink.TabStop = true;
             this.attendLink.Text = "ATTENDENCE";
+            this.attendLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.attendLink_LinkClicked);
             // 
             // classLink
             // 
@@ -109,6 +122,7 @@
             this.classLink.TabIndex = 22;
             this.classLink.TabStop = true;
             this.classLink.Text = "CLASSES";
+            this.classLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.classLink_LinkClicked);
             // 
             // homeLink
             // 
@@ -124,6 +138,7 @@
             this.homeLink.TabIndex = 21;
             this.homeLink.TabStop = true;
             this.homeLink.Text = "HOME";
+            this.homeLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.homeLink_LinkClicked);
             // 
             // homeLogout
             // 
@@ -180,12 +195,124 @@
             this.closelabel.TabIndex = 12;
             this.closelabel.Text = "X";
             // 
+            // addclassBtn
+            // 
+            this.addclassBtn.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.addclassBtn.Location = new System.Drawing.Point(426, 447);
+            this.addclassBtn.Name = "addclassBtn";
+            this.addclassBtn.Size = new System.Drawing.Size(128, 29);
+            this.addclassBtn.TabIndex = 13;
+            this.addclassBtn.Text = "Add New Class";
+            this.addclassBtn.UseVisualStyleBackColor = true;
+            // 
+            // classdeleteBtn
+            // 
+            this.classdeleteBtn.Font = new System.Drawing.Font("Tahoma", 8F);
+            this.classdeleteBtn.Location = new System.Drawing.Point(560, 447);
+            this.classdeleteBtn.Name = "classdeleteBtn";
+            this.classdeleteBtn.Size = new System.Drawing.Size(114, 29);
+            this.classdeleteBtn.TabIndex = 14;
+            this.classdeleteBtn.Text = "Delete Class";
+            this.classdeleteBtn.UseVisualStyleBackColor = true;
+            // 
+            // dateTxt
+            // 
+            this.dateTxt.AutoSize = true;
+            this.dateTxt.Location = new System.Drawing.Point(432, 337);
+            this.dateTxt.Name = "dateTxt";
+            this.dateTxt.Size = new System.Drawing.Size(36, 16);
+            this.dateTxt.TabIndex = 15;
+            this.dateTxt.Text = "Date";
+            // 
+            // timeTxt
+            // 
+            this.timeTxt.AutoSize = true;
+            this.timeTxt.Location = new System.Drawing.Point(432, 365);
+            this.timeTxt.Name = "timeTxt";
+            this.timeTxt.Size = new System.Drawing.Size(38, 16);
+            this.timeTxt.TabIndex = 16;
+            this.timeTxt.Text = "Time";
+            // 
+            // locationTxt
+            // 
+            this.locationTxt.AutoSize = true;
+            this.locationTxt.Location = new System.Drawing.Point(432, 392);
+            this.locationTxt.Name = "locationTxt";
+            this.locationTxt.Size = new System.Drawing.Size(58, 16);
+            this.locationTxt.TabIndex = 17;
+            this.locationTxt.Text = "Location";
+            // 
+            // typeTxt
+            // 
+            this.typeTxt.AutoSize = true;
+            this.typeTxt.Location = new System.Drawing.Point(432, 422);
+            this.typeTxt.Name = "typeTxt";
+            this.typeTxt.Size = new System.Drawing.Size(39, 16);
+            this.typeTxt.TabIndex = 18;
+            this.typeTxt.Text = "Type";
+            // 
+            // dateTextbox
+            // 
+            this.dateTextbox.Location = new System.Drawing.Point(544, 331);
+            this.dateTextbox.Name = "dateTextbox";
+            this.dateTextbox.Size = new System.Drawing.Size(122, 22);
+            this.dateTextbox.TabIndex = 19;
+            // 
+            // timeTextbox
+            // 
+            this.timeTextbox.Location = new System.Drawing.Point(544, 359);
+            this.timeTextbox.Name = "timeTextbox";
+            this.timeTextbox.Size = new System.Drawing.Size(122, 22);
+            this.timeTextbox.TabIndex = 21;
+            // 
+            // locationTextbox
+            // 
+            this.locationTextbox.Location = new System.Drawing.Point(544, 387);
+            this.locationTextbox.Name = "locationTextbox";
+            this.locationTextbox.Size = new System.Drawing.Size(122, 22);
+            this.locationTextbox.TabIndex = 22;
+            // 
+            // typeTextbox
+            // 
+            this.typeTextbox.Location = new System.Drawing.Point(544, 416);
+            this.typeTextbox.Name = "typeTextbox";
+            this.typeTextbox.Size = new System.Drawing.Size(122, 22);
+            this.typeTextbox.TabIndex = 23;
+            // 
+            // classIDtextbox
+            // 
+            this.classIDtextbox.Location = new System.Drawing.Point(544, 303);
+            this.classIDtextbox.Name = "classIDtextbox";
+            this.classIDtextbox.Size = new System.Drawing.Size(122, 22);
+            this.classIDtextbox.TabIndex = 24;
+            // 
+            // classIDtext
+            // 
+            this.classIDtext.AutoSize = true;
+            this.classIDtext.Location = new System.Drawing.Point(432, 309);
+            this.classIDtext.Name = "classIDtext";
+            this.classIDtext.Size = new System.Drawing.Size(57, 16);
+            this.classIDtext.TabIndex = 25;
+            this.classIDtext.Text = "Class ID";
+            // 
             // TrainerClasses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(682, 490);
+            this.Controls.Add(this.classIDtext);
+            this.Controls.Add(this.classIDtextbox);
+            this.Controls.Add(this.typeTextbox);
+            this.Controls.Add(this.locationTextbox);
+            this.Controls.Add(this.timeTextbox);
+            this.Controls.Add(this.dateTextbox);
+            this.Controls.Add(this.typeTxt);
+            this.Controls.Add(this.locationTxt);
+            this.Controls.Add(this.timeTxt);
+            this.Controls.Add(this.dateTxt);
+            this.Controls.Add(this.classdeleteBtn);
+            this.Controls.Add(this.addclassBtn);
             this.Controls.Add(this.closelabel);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.dataGridView1);
@@ -214,5 +341,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label closelabel;
+        private System.Windows.Forms.Button addclassBtn;
+        private System.Windows.Forms.Button classdeleteBtn;
+        private System.Windows.Forms.Label dateTxt;
+        private System.Windows.Forms.Label timeTxt;
+        private System.Windows.Forms.Label locationTxt;
+        private System.Windows.Forms.Label typeTxt;
+        private System.Windows.Forms.TextBox dateTextbox;
+        private System.Windows.Forms.TextBox timeTextbox;
+        private System.Windows.Forms.TextBox locationTextbox;
+        private System.Windows.Forms.TextBox typeTextbox;
+        private System.Windows.Forms.TextBox classIDtextbox;
+        private System.Windows.Forms.Label classIDtext;
     }
 }
