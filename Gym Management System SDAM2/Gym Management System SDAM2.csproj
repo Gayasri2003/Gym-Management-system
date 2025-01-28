@@ -66,6 +66,7 @@
     <Compile Include="TrainerAttendence.Designer.cs">
       <DependentUpon>TrainerAttendence.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrainerAttHelper.cs" />
     <Compile Include="TrainerClasses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +79,7 @@
     <Compile Include="TrainerProfile.Designer.cs">
       <DependentUpon>TrainerProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="TrainerAttendences.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

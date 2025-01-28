@@ -194,6 +194,7 @@
             this.closelabel.Size = new System.Drawing.Size(20, 20);
             this.closelabel.TabIndex = 12;
             this.closelabel.Text = "X";
+            this.closelabel.Click += new System.EventHandler(this.closelabel_Click);
             // 
             // addclassBtn
             // 
@@ -204,6 +205,7 @@
             this.addclassBtn.TabIndex = 13;
             this.addclassBtn.Text = "Add New Class";
             this.addclassBtn.UseVisualStyleBackColor = true;
+            this.addclassBtn.Click += new System.EventHandler(this.addclassBtn_Click);
             // 
             // classdeleteBtn
             // 
@@ -214,6 +216,7 @@
             this.classdeleteBtn.TabIndex = 14;
             this.classdeleteBtn.Text = "Delete Class";
             this.classdeleteBtn.UseVisualStyleBackColor = true;
+            this.classdeleteBtn.Click += new System.EventHandler(this.classdeleteBtn_Click);
             // 
             // dateTxt
             // 

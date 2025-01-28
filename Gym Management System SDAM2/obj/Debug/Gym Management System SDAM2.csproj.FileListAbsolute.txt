@@ -23,3 +23,17 @@ C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj
 C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerProfile.resources
 C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerAttendence.resources
 C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerClasses.resources
+C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\bin\Debug\Gym Management System SDAM2.exe.config
+C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\bin\Debug\Gym Management System SDAM2.exe
+C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\bin\Debug\Gym Management System SDAM2.pdb
+C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.AssemblyReference.cache
+C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.LoginForm.resources
+C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.Properties.Resources.resources
+C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.Register.resources
+C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerAttendence.resources
+C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerClasses.resources
+C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerProfile.resources
+C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.GenerateResource.cache
+C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.CoreCompileInputs.cache
+C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.exe
+C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.pdb
