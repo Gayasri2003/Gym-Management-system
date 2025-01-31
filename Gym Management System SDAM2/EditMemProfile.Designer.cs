@@ -29,17 +29,10 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.DashPanel = new System.Windows.Forms.Panel();
-            this.logoBox = new System.Windows.Forms.PictureBox();
-            this.DPanel2 = new System.Windows.Forms.Panel();
-            this.payBox4 = new System.Windows.Forms.PictureBox();
-            this.classBox2 = new System.Windows.Forms.PictureBox();
-            this.attenBox3 = new System.Windows.Forms.PictureBox();
-            this.profBox1 = new System.Windows.Forms.PictureBox();
-            this.MpaymentsLbl = new System.Windows.Forms.Label();
-            this.AttendLbl = new System.Windows.Forms.Label();
-            this.MclassLbl = new System.Windows.Forms.Label();
-            this.MprofileLbl = new System.Windows.Forms.Label();
+            this.closeLabel = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.FemaleBtn = new System.Windows.Forms.RadioButton();
+            this.MaleBtn = new System.Windows.Forms.RadioButton();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
@@ -51,10 +44,17 @@
             this.CNumberLabel = new System.Windows.Forms.Label();
             this.EditBtn = new System.Windows.Forms.Button();
             this.CityLabel = new System.Windows.Forms.Label();
-            this.MaleBtn = new System.Windows.Forms.RadioButton();
-            this.FemaleBtn = new System.Windows.Forms.RadioButton();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.closeLabel = new System.Windows.Forms.Label();
+            this.DashPanel = new System.Windows.Forms.Panel();
+            this.logoBox = new System.Windows.Forms.PictureBox();
+            this.DPanel2 = new System.Windows.Forms.Panel();
+            this.payBox4 = new System.Windows.Forms.PictureBox();
+            this.classBox2 = new System.Windows.Forms.PictureBox();
+            this.attenBox3 = new System.Windows.Forms.PictureBox();
+            this.profBox1 = new System.Windows.Forms.PictureBox();
+            this.MpaymentsLbl = new System.Windows.Forms.Label();
+            this.AttendLbl = new System.Windows.Forms.Label();
+            this.MclassLbl = new System.Windows.Forms.Label();
+            this.MprofileLbl = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.DashPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
@@ -88,6 +88,166 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(682, 489);
             this.panel1.TabIndex = 0;
+            // 
+            // closeLabel
+            // 
+            this.closeLabel.AutoSize = true;
+            this.closeLabel.BackColor = System.Drawing.Color.Red;
+            this.closeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeLabel.ForeColor = System.Drawing.Color.White;
+            this.closeLabel.Location = new System.Drawing.Point(650, 9);
+            this.closeLabel.Name = "closeLabel";
+            this.closeLabel.Size = new System.Drawing.Size(20, 20);
+            this.closeLabel.TabIndex = 31;
+            this.closeLabel.Text = "X";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaption;
+            this.dateTimePicker1.Location = new System.Drawing.Point(417, 129);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(223, 22);
+            this.dateTimePicker1.TabIndex = 30;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // FemaleBtn
+            // 
+            this.FemaleBtn.AutoSize = true;
+            this.FemaleBtn.Location = new System.Drawing.Point(417, 370);
+            this.FemaleBtn.Name = "FemaleBtn";
+            this.FemaleBtn.Size = new System.Drawing.Size(74, 20);
+            this.FemaleBtn.TabIndex = 29;
+            this.FemaleBtn.TabStop = true;
+            this.FemaleBtn.Text = "Female";
+            this.FemaleBtn.UseVisualStyleBackColor = true;
+            // 
+            // MaleBtn
+            // 
+            this.MaleBtn.AutoSize = true;
+            this.MaleBtn.Location = new System.Drawing.Point(417, 337);
+            this.MaleBtn.Name = "MaleBtn";
+            this.MaleBtn.Size = new System.Drawing.Size(58, 20);
+            this.MaleBtn.TabIndex = 28;
+            this.MaleBtn.TabStop = true;
+            this.MaleBtn.Text = "Male";
+            this.MaleBtn.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            this.textBox5.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox5.Location = new System.Drawing.Point(417, 279);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(223, 22);
+            this.textBox5.TabIndex = 27;
+            this.textBox5.Text = "\r\n";
+            // 
+            // textBox4
+            // 
+            this.textBox4.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox4.Location = new System.Drawing.Point(417, 230);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(223, 22);
+            this.textBox4.TabIndex = 26;
+            this.textBox4.Text = "\r\n";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox3.Location = new System.Drawing.Point(417, 178);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(223, 22);
+            this.textBox3.TabIndex = 25;
+            this.textBox3.Text = "\r\n";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.textBox1.Location = new System.Drawing.Point(417, 78);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(223, 22);
+            this.textBox1.TabIndex = 23;
+            this.textBox1.Text = "\r\n";
+            // 
+            // NameLabel
+            // 
+            this.NameLabel.AutoSize = true;
+            this.NameLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.Location = new System.Drawing.Point(258, 81);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(55, 19);
+            this.NameLabel.TabIndex = 17;
+            this.NameLabel.Text = "Name:";
+            // 
+            // BdayLabel
+            // 
+            this.BdayLabel.AutoSize = true;
+            this.BdayLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.BdayLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BdayLabel.Location = new System.Drawing.Point(258, 133);
+            this.BdayLabel.Name = "BdayLabel";
+            this.BdayLabel.Size = new System.Drawing.Size(104, 19);
+            this.BdayLabel.TabIndex = 18;
+            this.BdayLabel.Text = "Date of Birth:";
+            // 
+            // GenderLabel
+            // 
+            this.GenderLabel.AutoSize = true;
+            this.GenderLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.GenderLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GenderLabel.Location = new System.Drawing.Point(258, 338);
+            this.GenderLabel.Name = "GenderLabel";
+            this.GenderLabel.Size = new System.Drawing.Size(64, 19);
+            this.GenderLabel.TabIndex = 22;
+            this.GenderLabel.Text = "Gender:";
+            // 
+            // MailLabel
+            // 
+            this.MailLabel.AutoSize = true;
+            this.MailLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.MailLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MailLabel.Location = new System.Drawing.Point(258, 233);
+            this.MailLabel.Name = "MailLabel";
+            this.MailLabel.Size = new System.Drawing.Size(51, 19);
+            this.MailLabel.TabIndex = 20;
+            this.MailLabel.Text = "Email:";
+            // 
+            // CNumberLabel
+            // 
+            this.CNumberLabel.AutoSize = true;
+            this.CNumberLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.CNumberLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CNumberLabel.Location = new System.Drawing.Point(258, 181);
+            this.CNumberLabel.Name = "CNumberLabel";
+            this.CNumberLabel.Size = new System.Drawing.Size(129, 19);
+            this.CNumberLabel.TabIndex = 19;
+            this.CNumberLabel.Text = "Contact Number:";
+            // 
+            // EditBtn
+            // 
+            this.EditBtn.BackColor = System.Drawing.Color.MidnightBlue;
+            this.EditBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.EditBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EditBtn.ForeColor = System.Drawing.Color.White;
+            this.EditBtn.Location = new System.Drawing.Point(513, 413);
+            this.EditBtn.Margin = new System.Windows.Forms.Padding(0);
+            this.EditBtn.Name = "EditBtn";
+            this.EditBtn.Size = new System.Drawing.Size(127, 51);
+            this.EditBtn.TabIndex = 16;
+            this.EditBtn.Text = "Save Changes";
+            this.EditBtn.UseVisualStyleBackColor = false;
+            this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
+            // 
+            // CityLabel
+            // 
+            this.CityLabel.AutoSize = true;
+            this.CityLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.CityLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CityLabel.Location = new System.Drawing.Point(258, 282);
+            this.CityLabel.Name = "CityLabel";
+            this.CityLabel.Size = new System.Drawing.Size(40, 19);
+            this.CityLabel.TabIndex = 21;
+            this.CityLabel.Text = "City:";
             // 
             // DashPanel
             // 
@@ -213,165 +373,6 @@
             this.MprofileLbl.TabIndex = 0;
             this.MprofileLbl.Text = "Profile   ";
             this.MprofileLbl.Click += new System.EventHandler(this.MprofileLbl_Click);
-            // 
-            // textBox5
-            // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox5.Location = new System.Drawing.Point(417, 279);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(223, 22);
-            this.textBox5.TabIndex = 27;
-            this.textBox5.Text = "\r\n";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox4.Location = new System.Drawing.Point(417, 230);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(223, 22);
-            this.textBox4.TabIndex = 26;
-            this.textBox4.Text = "\r\n";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox3.Location = new System.Drawing.Point(417, 178);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(223, 22);
-            this.textBox3.TabIndex = 25;
-            this.textBox3.Text = "\r\n";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox1.Location = new System.Drawing.Point(417, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 22);
-            this.textBox1.TabIndex = 23;
-            this.textBox1.Text = "\r\n";
-            // 
-            // NameLabel
-            // 
-            this.NameLabel.AutoSize = true;
-            this.NameLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.NameLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLabel.Location = new System.Drawing.Point(258, 81);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(55, 19);
-            this.NameLabel.TabIndex = 17;
-            this.NameLabel.Text = "Name:";
-            // 
-            // BdayLabel
-            // 
-            this.BdayLabel.AutoSize = true;
-            this.BdayLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.BdayLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BdayLabel.Location = new System.Drawing.Point(258, 133);
-            this.BdayLabel.Name = "BdayLabel";
-            this.BdayLabel.Size = new System.Drawing.Size(104, 19);
-            this.BdayLabel.TabIndex = 18;
-            this.BdayLabel.Text = "Date of Birth:";
-            // 
-            // GenderLabel
-            // 
-            this.GenderLabel.AutoSize = true;
-            this.GenderLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.GenderLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GenderLabel.Location = new System.Drawing.Point(258, 338);
-            this.GenderLabel.Name = "GenderLabel";
-            this.GenderLabel.Size = new System.Drawing.Size(64, 19);
-            this.GenderLabel.TabIndex = 22;
-            this.GenderLabel.Text = "Gender:";
-            // 
-            // MailLabel
-            // 
-            this.MailLabel.AutoSize = true;
-            this.MailLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.MailLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MailLabel.Location = new System.Drawing.Point(258, 233);
-            this.MailLabel.Name = "MailLabel";
-            this.MailLabel.Size = new System.Drawing.Size(51, 19);
-            this.MailLabel.TabIndex = 20;
-            this.MailLabel.Text = "Email:";
-            // 
-            // CNumberLabel
-            // 
-            this.CNumberLabel.AutoSize = true;
-            this.CNumberLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.CNumberLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CNumberLabel.Location = new System.Drawing.Point(258, 181);
-            this.CNumberLabel.Name = "CNumberLabel";
-            this.CNumberLabel.Size = new System.Drawing.Size(129, 19);
-            this.CNumberLabel.TabIndex = 19;
-            this.CNumberLabel.Text = "Contact Number:";
-            // 
-            // EditBtn
-            // 
-            this.EditBtn.BackColor = System.Drawing.Color.MidnightBlue;
-            this.EditBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.EditBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EditBtn.ForeColor = System.Drawing.Color.White;
-            this.EditBtn.Location = new System.Drawing.Point(513, 413);
-            this.EditBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.EditBtn.Name = "EditBtn";
-            this.EditBtn.Size = new System.Drawing.Size(127, 51);
-            this.EditBtn.TabIndex = 16;
-            this.EditBtn.Text = "Save Changes";
-            this.EditBtn.UseVisualStyleBackColor = false;
-            // 
-            // CityLabel
-            // 
-            this.CityLabel.AutoSize = true;
-            this.CityLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.CityLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CityLabel.Location = new System.Drawing.Point(258, 282);
-            this.CityLabel.Name = "CityLabel";
-            this.CityLabel.Size = new System.Drawing.Size(40, 19);
-            this.CityLabel.TabIndex = 21;
-            this.CityLabel.Text = "City:";
-            // 
-            // MaleBtn
-            // 
-            this.MaleBtn.AutoSize = true;
-            this.MaleBtn.Location = new System.Drawing.Point(417, 337);
-            this.MaleBtn.Name = "MaleBtn";
-            this.MaleBtn.Size = new System.Drawing.Size(58, 20);
-            this.MaleBtn.TabIndex = 28;
-            this.MaleBtn.TabStop = true;
-            this.MaleBtn.Text = "Male";
-            this.MaleBtn.UseVisualStyleBackColor = true;
-            // 
-            // FemaleBtn
-            // 
-            this.FemaleBtn.AutoSize = true;
-            this.FemaleBtn.Location = new System.Drawing.Point(417, 370);
-            this.FemaleBtn.Name = "FemaleBtn";
-            this.FemaleBtn.Size = new System.Drawing.Size(74, 20);
-            this.FemaleBtn.TabIndex = 29;
-            this.FemaleBtn.TabStop = true;
-            this.FemaleBtn.Text = "Female";
-            this.FemaleBtn.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.CalendarMonthBackground = System.Drawing.SystemColors.InactiveCaption;
-            this.dateTimePicker1.Location = new System.Drawing.Point(417, 129);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(223, 22);
-            this.dateTimePicker1.TabIndex = 30;
-            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
-            // 
-            // closeLabel
-            // 
-            this.closeLabel.AutoSize = true;
-            this.closeLabel.BackColor = System.Drawing.Color.Red;
-            this.closeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeLabel.ForeColor = System.Drawing.Color.White;
-            this.closeLabel.Location = new System.Drawing.Point(650, 9);
-            this.closeLabel.Name = "closeLabel";
-            this.closeLabel.Size = new System.Drawing.Size(20, 20);
-            this.closeLabel.TabIndex = 31;
-            this.closeLabel.Text = "X";
             // 
             // EditMemProfile
             // 

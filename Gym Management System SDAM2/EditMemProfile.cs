@@ -50,5 +50,10 @@ namespace Gym_Management_System_SDAM2
             memberPaymentsForm.Show();
             this.Hide();
         }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace Gym_Management_System_SDAM2
 {
     public partial class LoginForm : Form
     {
-        private string connectionString = @"Data Source=DESKTOP-28I7HML\SQLEXPRESS;Initial Catalog=Gym_Management_System_SDAM2;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private string connectionString = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=Gym_Management_System_SDAM2;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         public LoginForm()
         {
             InitializeComponent();
