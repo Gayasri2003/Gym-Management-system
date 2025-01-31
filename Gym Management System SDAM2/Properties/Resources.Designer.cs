@@ -63,6 +63,16 @@ namespace Gym_Management_System_SDAM2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dumbbell_128 {
+            get {
+                object obj = ResourceManager.GetObject("dumbbell-128", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_user_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-user-100", resourceCulture);
@@ -73,9 +83,69 @@ namespace Gym_Management_System_SDAM2.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap istockphoto_1225549108_612x612 {
+        internal static System.Drawing.Bitmap input_onlinepngtools__5_ {
             get {
-                object obj = ResourceManager.GetObject("istockphoto-1225549108-612x612", resourceCulture);
+                object obj = ResourceManager.GetObject("input-onlinepngtools (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap input_onlinepngtools__6_ {
+            get {
+                object obj = ResourceManager.GetObject("input-onlinepngtools (6)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap input_onlinepngtools__7_ {
+            get {
+                object obj = ResourceManager.GetObject("input-onlinepngtools (7)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap input_onlinepngtools__8_ {
+            get {
+                object obj = ResourceManager.GetObject("input-onlinepngtools (8)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap input_onlinepngtools__9_ {
+            get {
+                object obj = ResourceManager.GetObject("input-onlinepngtools (9)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2025_01_23_182521 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2025-01-23 182521", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Screenshot_2025_01_23_183029 {
+            get {
+                object obj = ResourceManager.GetObject("Screenshot 2025-01-23 183029", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

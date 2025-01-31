@@ -2,38 +2,16 @@ C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2
 C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\bin\Debug\Gym Management System SDAM2.exe
 C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\bin\Debug\Gym Management System SDAM2.pdb
 C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.EditMemProfile.resources
 C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.LoginForm.resources
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.MemberAttendence.resources
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.MemberClasses.resources
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.MemberPayments.resources
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.MemberProfile.resources
+C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.MemJoinClass.resources
 C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.Properties.Resources.resources
 C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.Register.resources
 C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.GenerateResource.cache
 C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.CoreCompileInputs.cache
 C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.exe
 C:\Users\HP\source\repos\Gym Management System SDAM2\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.pdb
-C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\bin\Debug\Gym Management System SDAM2.exe.config
-C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\bin\Debug\Gym Management System SDAM2.exe
-C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\bin\Debug\Gym Management System SDAM2.pdb
-C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.AssemblyReference.cache
-C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.LoginForm.resources
-C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.Properties.Resources.resources
-C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.Register.resources
-C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.GenerateResource.cache
-C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.CoreCompileInputs.cache
-C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.exe
-C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.pdb
-C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerProfile.resources
-C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerAttendence.resources
-C:\Users\USER\Source\Repos\Gym-Management-system\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerClasses.resources
-C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\bin\Debug\Gym Management System SDAM2.exe.config
-C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\bin\Debug\Gym Management System SDAM2.exe
-C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\bin\Debug\Gym Management System SDAM2.pdb
-C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.AssemblyReference.cache
-C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.LoginForm.resources
-C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.Properties.Resources.resources
-C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.Register.resources
-C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerAttendence.resources
-C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerClasses.resources
-C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym_Management_System_SDAM2.TrainerProfile.resources
-C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.GenerateResource.cache
-C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.csproj.CoreCompileInputs.cache
-C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.exe
-C:\Users\USER\Documents\Visual Studio 2022\APIIT\Gym Management System SDAM2\obj\Debug\Gym Management System SDAM2.pdb

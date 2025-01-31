@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.loginPanel1 = new System.Windows.Forms.Panel();
+            this.RegisterTxt = new System.Windows.Forms.Label();
             this.closelabel = new System.Windows.Forms.Label();
             this.loginPanel2 = new System.Windows.Forms.Panel();
             this.pictureBox = new System.Windows.Forms.PictureBox();
@@ -41,7 +42,6 @@
             this.passwdLabel = new System.Windows.Forms.Label();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.WcLabel = new System.Windows.Forms.Label();
-            this.RegisterTxt = new System.Windows.Forms.Label();
             this.loginPanel1.SuspendLayout();
             this.loginPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -66,6 +66,17 @@
             this.loginPanel1.Name = "loginPanel1";
             this.loginPanel1.Size = new System.Drawing.Size(683, 488);
             this.loginPanel1.TabIndex = 0;
+            // 
+            // RegisterTxt
+            // 
+            this.RegisterTxt.AutoSize = true;
+            this.RegisterTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegisterTxt.Location = new System.Drawing.Point(489, 419);
+            this.RegisterTxt.Name = "RegisterTxt";
+            this.RegisterTxt.Size = new System.Drawing.Size(90, 16);
+            this.RegisterTxt.TabIndex = 12;
+            this.RegisterTxt.Text = "Register Here";
+            this.RegisterTxt.Click += new System.EventHandler(this.RegisterTxt_Click);
             // 
             // closelabel
             // 
@@ -132,6 +143,7 @@
             this.showPcheck.TabIndex = 7;
             this.showPcheck.Text = "Show Password";
             this.showPcheck.UseVisualStyleBackColor = true;
+            this.showPcheck.CheckedChanged += new System.EventHandler(this.showPcheck_CheckedChanged);
             // 
             // loginBtn
             // 
@@ -145,6 +157,7 @@
             this.loginBtn.TabIndex = 6;
             this.loginBtn.Text = "LOGIN";
             this.loginBtn.UseVisualStyleBackColor = false;
+            this.loginBtn.Click += new System.EventHandler(this.loginBtn_Click);
             // 
             // passwdTxt
             // 
@@ -197,17 +210,6 @@
             this.WcLabel.TabIndex = 1;
             this.WcLabel.Text = "Welcome Back!";
             this.WcLabel.Click += new System.EventHandler(this.WcLabel_Click);
-            // 
-            // RegisterTxt
-            // 
-            this.RegisterTxt.AutoSize = true;
-            this.RegisterTxt.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RegisterTxt.Location = new System.Drawing.Point(489, 419);
-            this.RegisterTxt.Name = "RegisterTxt";
-            this.RegisterTxt.Size = new System.Drawing.Size(90, 16);
-            this.RegisterTxt.TabIndex = 12;
-            this.RegisterTxt.Text = "Register Here";
-            this.RegisterTxt.Click += new System.EventHandler(this.RegisterTxt_Click);
             // 
             // LoginForm
             // 

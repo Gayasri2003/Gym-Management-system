@@ -46,11 +46,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DB_Helper.cs" />
+    <Compile Include="EditMemProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditMemProfile.Designer.cs">
+      <DependentUpon>EditMemProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberAttendence.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberAttendence.Designer.cs">
+      <DependentUpon>MemberAttendence.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberClasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberClasses.Designer.cs">
+      <DependentUpon>MemberClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberPayments.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberPayments.Designer.cs">
+      <DependentUpon>MemberPayments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemberProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberProfile.Designer.cs">
+      <DependentUpon>MemberProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MemJoinClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemJoinClass.Designer.cs">
+      <DependentUpon>MemJoinClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -60,28 +97,33 @@
     <Compile Include="Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrainerAttendence.cs">
+    <Compile Include="User.cs" />
+    <Compile Include="WaitingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TrainerAttendence.Designer.cs">
-      <DependentUpon>TrainerAttendence.cs</DependentUpon>
+    <Compile Include="WaitingForm.Designer.cs">
+      <DependentUpon>WaitingForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TrainerAttHelper.cs" />
-    <Compile Include="TrainerClasses.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TrainerClasses.Designer.cs">
-      <DependentUpon>TrainerClasses.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TrainerProfile.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TrainerProfile.Designer.cs">
-      <DependentUpon>TrainerProfile.cs</DependentUpon>
-    </Compile>
-    <Compile Include="TrainerAttendences.cs" />
+    <EmbeddedResource Include="EditMemProfile.resx">
+      <DependentUpon>EditMemProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberAttendence.resx">
+      <DependentUpon>MemberAttendence.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberClasses.resx">
+      <DependentUpon>MemberClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberPayments.resx">
+      <DependentUpon>MemberPayments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberProfile.resx">
+      <DependentUpon>MemberProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemJoinClass.resx">
+      <DependentUpon>MemJoinClass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,15 +132,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TrainerAttendence.resx">
-      <DependentUpon>TrainerAttendence.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TrainerClasses.resx">
-      <DependentUpon>TrainerClasses.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TrainerProfile.resx">
-      <DependentUpon>TrainerProfile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -122,7 +155,28 @@
     <None Include="Resources\icons8-user-100.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\istockphoto-1225549108-612x612.jpg" />
+    <None Include="Resources\dumbbell-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\input-onlinepngtools %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\input-onlinepngtools %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\input-onlinepngtools %287%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\input-onlinepngtools %288%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\input-onlinepngtools %289%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-01-23 182521.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2025-01-23 183029.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
