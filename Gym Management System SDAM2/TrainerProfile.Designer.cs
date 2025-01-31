@@ -39,15 +39,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.trnName = new System.Windows.Forms.Label();
             this.trnLname = new System.Windows.Forms.Label();
-            this.trnAge = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.trnGender = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.closelabel = new System.Windows.Forms.Label();
+            this.trnDOB = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -172,7 +173,7 @@
             this.trnName.AutoSize = true;
             this.trnName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.trnName.ForeColor = System.Drawing.Color.Black;
-            this.trnName.Location = new System.Drawing.Point(333, 79);
+            this.trnName.Location = new System.Drawing.Point(304, 56);
             this.trnName.Name = "trnName";
             this.trnName.Size = new System.Drawing.Size(85, 18);
             this.trnName.TabIndex = 6;
@@ -183,51 +184,18 @@
             this.trnLname.AutoSize = true;
             this.trnLname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.trnLname.ForeColor = System.Drawing.Color.Black;
-            this.trnLname.Location = new System.Drawing.Point(334, 108);
+            this.trnLname.Location = new System.Drawing.Point(305, 85);
             this.trnLname.Name = "trnLname";
             this.trnLname.Size = new System.Drawing.Size(84, 18);
             this.trnLname.TabIndex = 7;
             this.trnLname.Text = "Last Name:";
-            // 
-            // trnAge
-            // 
-            this.trnAge.AutoSize = true;
-            this.trnAge.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.trnAge.ForeColor = System.Drawing.Color.Black;
-            this.trnAge.Location = new System.Drawing.Point(576, 79);
-            this.trnAge.Name = "trnAge";
-            this.trnAge.Size = new System.Drawing.Size(37, 18);
-            this.trnAge.TabIndex = 8;
-            this.trnAge.Text = "Age:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(576, 108);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 18);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Height:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(576, 137);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 18);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Weight:";
             // 
             // trnGender
             // 
             this.trnGender.AutoSize = true;
             this.trnGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.trnGender.ForeColor = System.Drawing.Color.Black;
-            this.trnGender.Location = new System.Drawing.Point(334, 137);
+            this.trnGender.Location = new System.Drawing.Point(305, 114);
             this.trnGender.Name = "trnGender";
             this.trnGender.Size = new System.Drawing.Size(57, 18);
             this.trnGender.TabIndex = 12;
@@ -235,6 +203,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BackgroundImage = global::Gym_Management_System_SDAM2.Properties.Resources.icons8_user_100;
             this.pictureBox1.Location = new System.Drawing.Point(151, 55);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(148, 129);
@@ -253,18 +222,48 @@
             this.closelabel.TabIndex = 13;
             this.closelabel.Text = "X";
             // 
+            // trnDOB
+            // 
+            this.trnDOB.AutoSize = true;
+            this.trnDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.trnDOB.Location = new System.Drawing.Point(304, 143);
+            this.trnDOB.Name = "trnDOB";
+            this.trnDOB.Size = new System.Drawing.Size(94, 18);
+            this.trnDOB.TabIndex = 14;
+            this.trnDOB.Text = "Date of Birth:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.label4.Location = new System.Drawing.Point(146, 313);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(221, 29);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Upcoming Events";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(151, 359);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(247, 118);
+            this.dataGridView1.TabIndex = 16;
+            // 
             // TrainerProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 490);
             this.ControlBox = false;
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.trnDOB);
             this.Controls.Add(this.closelabel);
             this.Controls.Add(this.trnGender);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.trnAge);
             this.Controls.Add(this.trnLname);
             this.Controls.Add(this.trnName);
             this.Controls.Add(this.label3);
@@ -278,6 +277,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -292,9 +292,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label trnName;
         private System.Windows.Forms.Label trnLname;
-        private System.Windows.Forms.Label trnAge;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label trnGender;
         private System.Windows.Forms.Button homeLogout;
@@ -302,5 +299,8 @@
         private System.Windows.Forms.LinkLabel attendLink;
         private System.Windows.Forms.LinkLabel classLink;
         private System.Windows.Forms.Label closelabel;
+        private System.Windows.Forms.Label trnDOB;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

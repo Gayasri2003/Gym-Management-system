@@ -14,6 +14,7 @@ namespace Gym_Management_System_SDAM2
 {
     public partial class TrainerAttendence : Form
     {
+        string connectionString = "Server=(local)\\SQLEXPRESS;Database=Gym_Management_System_SDAM2;Integrated Security=True;";
         public TrainerAttendence()
         {
             InitializeComponent();

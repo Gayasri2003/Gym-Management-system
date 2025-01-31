@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Gym_Management_System_SDAM2
 {
     public partial class TrainerProfile : Form
     {
+        string connectionString = "Server=(local)\\SQLEXPRESS;Database=Gym_Management_System_SDAM2;Integrated Security=True;";
         public TrainerProfile()
         {
             InitializeComponent();
