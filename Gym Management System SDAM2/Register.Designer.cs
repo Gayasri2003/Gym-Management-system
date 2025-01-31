@@ -36,13 +36,11 @@
             this.regBtn = new System.Windows.Forms.Button();
             this.PassWtxt = new System.Windows.Forms.TextBox();
             this.regPanel2 = new System.Windows.Forms.Panel();
-            this.radiobtn2 = new System.Windows.Forms.RadioButton();
-            this.EmailTxt = new System.Windows.Forms.TextBox();
-            this.EmailLbl = new System.Windows.Forms.Label();
             this.rolePanel = new System.Windows.Forms.Panel();
             this.roleBtn1 = new System.Windows.Forms.RadioButton();
             this.roleBtn2 = new System.Windows.Forms.RadioButton();
             this.roleLbl = new System.Windows.Forms.Label();
+            this.genBtn2 = new System.Windows.Forms.RadioButton();
             this.genBtn1 = new System.Windows.Forms.RadioButton();
             this.genderLbl = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -59,6 +57,8 @@
             this.UserNtxt = new System.Windows.Forms.TextBox();
             this.signupLabel = new System.Windows.Forms.Label();
             this.closeLable = new System.Windows.Forms.Label();
+            this.EmailLbl = new System.Windows.Forms.Label();
+            this.EmailTxt = new System.Windows.Forms.TextBox();
             this.regPanel1.SuspendLayout();
             this.regPanel2.SuspendLayout();
             this.rolePanel.SuspendLayout();
@@ -145,11 +145,11 @@
             // regPanel2
             // 
             this.regPanel2.BackColor = System.Drawing.Color.MidnightBlue;
-            this.regPanel2.Controls.Add(this.radiobtn2);
             this.regPanel2.Controls.Add(this.EmailTxt);
             this.regPanel2.Controls.Add(this.EmailLbl);
             this.regPanel2.Controls.Add(this.rolePanel);
             this.regPanel2.Controls.Add(this.roleLbl);
+            this.regPanel2.Controls.Add(this.genBtn2);
             this.regPanel2.Controls.Add(this.genBtn1);
             this.regPanel2.Controls.Add(this.genderLbl);
             this.regPanel2.Controls.Add(this.dateTimePicker1);
@@ -167,41 +167,6 @@
             this.regPanel2.Name = "regPanel2";
             this.regPanel2.Size = new System.Drawing.Size(341, 488);
             this.regPanel2.TabIndex = 3;
-            this.regPanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.regPanel2_Paint);
-            // 
-            // radiobtn2
-            // 
-            this.radiobtn2.AutoSize = true;
-            this.radiobtn2.BackColor = System.Drawing.Color.MidnightBlue;
-            this.radiobtn2.ForeColor = System.Drawing.Color.White;
-            this.radiobtn2.Location = new System.Drawing.Point(167, 343);
-            this.radiobtn2.Name = "radiobtn2";
-            this.radiobtn2.Size = new System.Drawing.Size(74, 20);
-            this.radiobtn2.TabIndex = 21;
-            this.radiobtn2.TabStop = true;
-            this.radiobtn2.Text = "Female";
-            this.radiobtn2.UseVisualStyleBackColor = false;
-            this.radiobtn2.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
-            // 
-            // EmailTxt
-            // 
-            this.EmailTxt.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.EmailTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.EmailTxt.Location = new System.Drawing.Point(36, 282);
-            this.EmailTxt.Name = "EmailTxt";
-            this.EmailTxt.Size = new System.Drawing.Size(286, 22);
-            this.EmailTxt.TabIndex = 20;
-            // 
-            // EmailLbl
-            // 
-            this.EmailLbl.AutoSize = true;
-            this.EmailLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailLbl.ForeColor = System.Drawing.Color.White;
-            this.EmailLbl.Location = new System.Drawing.Point(33, 261);
-            this.EmailLbl.Name = "EmailLbl";
-            this.EmailLbl.Size = new System.Drawing.Size(49, 18);
-            this.EmailLbl.TabIndex = 19;
-            this.EmailLbl.Text = "Email:";
             // 
             // rolePanel
             // 
@@ -248,12 +213,25 @@
             this.roleLbl.TabIndex = 17;
             this.roleLbl.Text = "Role:";
             // 
+            // genBtn2
+            // 
+            this.genBtn2.AutoSize = true;
+            this.genBtn2.BackColor = System.Drawing.Color.MidnightBlue;
+            this.genBtn2.ForeColor = System.Drawing.Color.White;
+            this.genBtn2.Location = new System.Drawing.Point(195, 352);
+            this.genBtn2.Name = "genBtn2";
+            this.genBtn2.Size = new System.Drawing.Size(74, 20);
+            this.genBtn2.TabIndex = 16;
+            this.genBtn2.TabStop = true;
+            this.genBtn2.Text = "Female";
+            this.genBtn2.UseVisualStyleBackColor = false;
+            // 
             // genBtn1
             // 
             this.genBtn1.AutoSize = true;
             this.genBtn1.BackColor = System.Drawing.Color.MidnightBlue;
             this.genBtn1.ForeColor = System.Drawing.Color.White;
-            this.genBtn1.Location = new System.Drawing.Point(36, 343);
+            this.genBtn1.Location = new System.Drawing.Point(36, 352);
             this.genBtn1.Name = "genBtn1";
             this.genBtn1.Size = new System.Drawing.Size(58, 20);
             this.genBtn1.TabIndex = 15;
@@ -418,6 +396,26 @@
             this.closeLable.Text = "X";
             this.closeLable.Click += new System.EventHandler(this.closeLable_Click);
             // 
+            // EmailLbl
+            // 
+            this.EmailLbl.AutoSize = true;
+            this.EmailLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailLbl.ForeColor = System.Drawing.Color.White;
+            this.EmailLbl.Location = new System.Drawing.Point(33, 261);
+            this.EmailLbl.Name = "EmailLbl";
+            this.EmailLbl.Size = new System.Drawing.Size(49, 18);
+            this.EmailLbl.TabIndex = 19;
+            this.EmailLbl.Text = "Email:";
+            // 
+            // EmailTxt
+            // 
+            this.EmailTxt.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.EmailTxt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.EmailTxt.Location = new System.Drawing.Point(36, 282);
+            this.EmailTxt.Name = "EmailTxt";
+            this.EmailTxt.Size = new System.Drawing.Size(286, 22);
+            this.EmailTxt.TabIndex = 20;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -458,6 +456,7 @@
         private System.Windows.Forms.Label lNameLbl;
         private System.Windows.Forms.Label DoBlbl;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.RadioButton genBtn2;
         private System.Windows.Forms.RadioButton genBtn1;
         private System.Windows.Forms.Label roleLbl;
         private System.Windows.Forms.RadioButton roleBtn2;
@@ -469,6 +468,5 @@
         private System.Windows.Forms.Panel rolePanel;
         private System.Windows.Forms.Label EmailLbl;
         private System.Windows.Forms.TextBox EmailTxt;
-        private System.Windows.Forms.RadioButton radiobtn2;
     }
 }
