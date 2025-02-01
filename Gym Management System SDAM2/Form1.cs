@@ -9,11 +9,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace Gym_Management_System_SDAM2
 {
     public partial class LoginForm : Form
     {
-        private string connectionString = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=Gym_Management_System_SDAM2;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        string connectionString = "Server=(local)\\SQLEXPRESS;Database=GymDatabase;Integrated Security=True;TrustServerCertificate=True";
         public LoginForm()
         {
             InitializeComponent();
@@ -83,13 +84,8 @@ namespace Gym_Management_System_SDAM2
                             memberProfile.Show();
                             this.Hide();
                         }
-                        else if (role == "Trainer")
-                        {
-
-                            TrainerProfile trainerProfile = new TrainerProfile();
-                            trainerProfile.Show();
-                            this.Hide();
-                        }
+                        
+                        
                     }
                     //if user not found,cannot login message 
                     else

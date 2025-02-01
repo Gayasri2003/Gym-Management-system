@@ -30,6 +30,7 @@
         {
             this.closeLabel = new System.Windows.Forms.Label();
             this.MemPanel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.EditBtn = new System.Windows.Forms.Button();
             this.DashPanel = new System.Windows.Forms.Panel();
             this.logoBox = new System.Windows.Forms.PictureBox();
@@ -42,8 +43,8 @@
             this.AttendLbl = new System.Windows.Forms.Label();
             this.MclassLbl = new System.Windows.Forms.Label();
             this.MprofileLbl = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.MemPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.DashPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
             this.DPanel2.SuspendLayout();
@@ -51,7 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.classBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attenBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // closeLabel
@@ -79,6 +79,17 @@
             this.MemPanel1.Name = "MemPanel1";
             this.MemPanel1.Size = new System.Drawing.Size(682, 489);
             this.MemPanel1.TabIndex = 1;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(229, 55);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(432, 284);
+            this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // EditBtn
             // 
@@ -220,16 +231,6 @@
             this.MprofileLbl.Text = "Profile   ";
             this.MprofileLbl.Click += new System.EventHandler(this.MprofileLbl_Click);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(229, 55);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(432, 284);
-            this.dataGridView1.TabIndex = 3;
-            // 
             // MemberProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -241,6 +242,7 @@
             this.Text = "MemberProfile";
             this.MemPanel1.ResumeLayout(false);
             this.MemPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.DashPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).EndInit();
             this.DPanel2.ResumeLayout(false);
@@ -249,7 +251,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.classBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attenBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

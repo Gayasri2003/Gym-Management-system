@@ -42,9 +42,15 @@
             this.trnGender = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.closelabel = new System.Windows.Forms.Label();
-            this.trnDOB = new System.Windows.Forms.Label();
+            this.trnContact = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.trnCity = new System.Windows.Forms.Label();
+            this.fName = new System.Windows.Forms.Label();
+            this.lName = new System.Windows.Forms.Label();
+            this.gEnder = new System.Windows.Forms.Label();
+            this.cOntact = new System.Windows.Forms.Label();
+            this.cIty = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -167,13 +173,14 @@
             this.label3.Size = new System.Drawing.Size(141, 29);
             this.label3.TabIndex = 1;
             this.label3.Text = "Dashboard";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // trnName
             // 
             this.trnName.AutoSize = true;
             this.trnName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.trnName.ForeColor = System.Drawing.Color.Black;
-            this.trnName.Location = new System.Drawing.Point(304, 56);
+            this.trnName.Location = new System.Drawing.Point(304, 53);
             this.trnName.Name = "trnName";
             this.trnName.Size = new System.Drawing.Size(85, 18);
             this.trnName.TabIndex = 6;
@@ -184,7 +191,7 @@
             this.trnLname.AutoSize = true;
             this.trnLname.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.trnLname.ForeColor = System.Drawing.Color.Black;
-            this.trnLname.Location = new System.Drawing.Point(305, 85);
+            this.trnLname.Location = new System.Drawing.Point(304, 81);
             this.trnLname.Name = "trnLname";
             this.trnLname.Size = new System.Drawing.Size(84, 18);
             this.trnLname.TabIndex = 7;
@@ -195,7 +202,7 @@
             this.trnGender.AutoSize = true;
             this.trnGender.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.trnGender.ForeColor = System.Drawing.Color.Black;
-            this.trnGender.Location = new System.Drawing.Point(305, 114);
+            this.trnGender.Location = new System.Drawing.Point(304, 108);
             this.trnGender.Name = "trnGender";
             this.trnGender.Size = new System.Drawing.Size(57, 18);
             this.trnGender.TabIndex = 12;
@@ -222,15 +229,15 @@
             this.closelabel.TabIndex = 13;
             this.closelabel.Text = "X";
             // 
-            // trnDOB
+            // trnContact
             // 
-            this.trnDOB.AutoSize = true;
-            this.trnDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.trnDOB.Location = new System.Drawing.Point(304, 143);
-            this.trnDOB.Name = "trnDOB";
-            this.trnDOB.Size = new System.Drawing.Size(94, 18);
-            this.trnDOB.TabIndex = 14;
-            this.trnDOB.Text = "Date of Birth:";
+            this.trnContact.AutoSize = true;
+            this.trnContact.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.trnContact.Location = new System.Drawing.Point(304, 135);
+            this.trnContact.Name = "trnContact";
+            this.trnContact.Size = new System.Drawing.Size(125, 18);
+            this.trnContact.TabIndex = 14;
+            this.trnContact.Text = "Contact Number: ";
             // 
             // label4
             // 
@@ -252,15 +259,76 @@
             this.dataGridView1.Size = new System.Drawing.Size(247, 118);
             this.dataGridView1.TabIndex = 16;
             // 
+            // trnCity
+            // 
+            this.trnCity.AutoSize = true;
+            this.trnCity.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.trnCity.Location = new System.Drawing.Point(304, 166);
+            this.trnCity.Name = "trnCity";
+            this.trnCity.Size = new System.Drawing.Size(37, 18);
+            this.trnCity.TabIndex = 17;
+            this.trnCity.Text = "City:";
+            // 
+            // fName
+            // 
+            this.fName.AutoSize = true;
+            this.fName.Location = new System.Drawing.Point(481, 53);
+            this.fName.Name = "fName";
+            this.fName.Size = new System.Drawing.Size(44, 16);
+            this.fName.TabIndex = 18;
+            this.fName.Text = "label5";
+            // 
+            // lName
+            // 
+            this.lName.AutoSize = true;
+            this.lName.Location = new System.Drawing.Point(481, 83);
+            this.lName.Name = "lName";
+            this.lName.Size = new System.Drawing.Size(44, 16);
+            this.lName.TabIndex = 19;
+            this.lName.Text = "label6";
+            // 
+            // gEnder
+            // 
+            this.gEnder.AutoSize = true;
+            this.gEnder.Location = new System.Drawing.Point(481, 110);
+            this.gEnder.Name = "gEnder";
+            this.gEnder.Size = new System.Drawing.Size(44, 16);
+            this.gEnder.TabIndex = 20;
+            this.gEnder.Text = "label7";
+            // 
+            // cOntact
+            // 
+            this.cOntact.AutoSize = true;
+            this.cOntact.Location = new System.Drawing.Point(481, 137);
+            this.cOntact.Name = "cOntact";
+            this.cOntact.Size = new System.Drawing.Size(44, 16);
+            this.cOntact.TabIndex = 21;
+            this.cOntact.Text = "label8";
+            // 
+            // cIty
+            // 
+            this.cIty.AutoSize = true;
+            this.cIty.Location = new System.Drawing.Point(481, 166);
+            this.cIty.Name = "cIty";
+            this.cIty.Size = new System.Drawing.Size(44, 16);
+            this.cIty.TabIndex = 22;
+            this.cIty.Text = "label9";
+            // 
             // TrainerProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(682, 490);
             this.ControlBox = false;
+            this.Controls.Add(this.cIty);
+            this.Controls.Add(this.cOntact);
+            this.Controls.Add(this.gEnder);
+            this.Controls.Add(this.lName);
+            this.Controls.Add(this.fName);
+            this.Controls.Add(this.trnCity);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.trnDOB);
+            this.Controls.Add(this.trnContact);
             this.Controls.Add(this.closelabel);
             this.Controls.Add(this.trnGender);
             this.Controls.Add(this.pictureBox1);
@@ -299,8 +367,14 @@
         private System.Windows.Forms.LinkLabel attendLink;
         private System.Windows.Forms.LinkLabel classLink;
         private System.Windows.Forms.Label closelabel;
-        private System.Windows.Forms.Label trnDOB;
+        private System.Windows.Forms.Label trnContact;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label trnCity;
+        private System.Windows.Forms.Label fName;
+        private System.Windows.Forms.Label lName;
+        private System.Windows.Forms.Label gEnder;
+        private System.Windows.Forms.Label cOntact;
+        private System.Windows.Forms.Label cIty;
     }
 }
