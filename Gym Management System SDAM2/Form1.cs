@@ -84,8 +84,14 @@ namespace Gym_Management_System_SDAM2
                             memberProfile.Show();
                             this.Hide();
                         }
-                        
-                        
+                        else if (role == "Trainer")
+                        {
+                            TrainerProfile trainerProfile = new TrainerProfile(username); // Pass username to TrainerProfile
+                            trainerProfile.Show();
+                            this.Hide();
+                        }
+
+
                     }
                     //if user not found,cannot login message 
                     else

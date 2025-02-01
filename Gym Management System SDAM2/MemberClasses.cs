@@ -49,5 +49,10 @@ namespace Gym_Management_System_SDAM2
         {
             Application.Exit();
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

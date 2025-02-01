@@ -29,30 +29,30 @@
         private void InitializeComponent()
         {
             this.ClassPanel1 = new System.Windows.Forms.Panel();
-            this.DashPanel = new System.Windows.Forms.Panel();
-            this.DPanel2 = new System.Windows.Forms.Panel();
-            this.MpaymentsLbl = new System.Windows.Forms.Label();
-            this.AttendLbl = new System.Windows.Forms.Label();
-            this.MclassLbl = new System.Windows.Forms.Label();
-            this.MprofileLbl = new System.Windows.Forms.Label();
+            this.JoinClassBtn = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.ClassTopicLbl = new System.Windows.Forms.Label();
             this.closeLabel = new System.Windows.Forms.Label();
+            this.DashPanel = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.DPanel2 = new System.Windows.Forms.Panel();
             this.payBox4 = new System.Windows.Forms.PictureBox();
             this.classBox2 = new System.Windows.Forms.PictureBox();
             this.attenBox3 = new System.Windows.Forms.PictureBox();
             this.profBox1 = new System.Windows.Forms.PictureBox();
-            this.ClassTopicLbl = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.JoinClassBtn = new System.Windows.Forms.Button();
+            this.MpaymentsLbl = new System.Windows.Forms.Label();
+            this.AttendLbl = new System.Windows.Forms.Label();
+            this.MclassLbl = new System.Windows.Forms.Label();
+            this.MprofileLbl = new System.Windows.Forms.Label();
             this.ClassPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.DashPanel.SuspendLayout();
-            this.DPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.DPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.payBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.classBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.attenBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.profBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ClassPanel1
@@ -68,6 +68,54 @@
             this.ClassPanel1.Size = new System.Drawing.Size(683, 489);
             this.ClassPanel1.TabIndex = 3;
             // 
+            // JoinClassBtn
+            // 
+            this.JoinClassBtn.BackColor = System.Drawing.Color.MidnightBlue;
+            this.JoinClassBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.JoinClassBtn.ForeColor = System.Drawing.Color.White;
+            this.JoinClassBtn.Location = new System.Drawing.Point(520, 441);
+            this.JoinClassBtn.Name = "JoinClassBtn";
+            this.JoinClassBtn.Size = new System.Drawing.Size(119, 36);
+            this.JoinClassBtn.TabIndex = 6;
+            this.JoinClassBtn.Text = "Join Now";
+            this.JoinClassBtn.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(243, 92);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(405, 315);
+            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // ClassTopicLbl
+            // 
+            this.ClassTopicLbl.AutoSize = true;
+            this.ClassTopicLbl.BackColor = System.Drawing.Color.RoyalBlue;
+            this.ClassTopicLbl.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClassTopicLbl.ForeColor = System.Drawing.Color.White;
+            this.ClassTopicLbl.Location = new System.Drawing.Point(366, 47);
+            this.ClassTopicLbl.Name = "ClassTopicLbl";
+            this.ClassTopicLbl.Size = new System.Drawing.Size(154, 23);
+            this.ClassTopicLbl.TabIndex = 4;
+            this.ClassTopicLbl.Text = "Available Classes";
+            // 
+            // closeLabel
+            // 
+            this.closeLabel.AutoSize = true;
+            this.closeLabel.BackColor = System.Drawing.Color.Red;
+            this.closeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeLabel.ForeColor = System.Drawing.Color.White;
+            this.closeLabel.Location = new System.Drawing.Point(650, 9);
+            this.closeLabel.Name = "closeLabel";
+            this.closeLabel.Size = new System.Drawing.Size(20, 20);
+            this.closeLabel.TabIndex = 3;
+            this.closeLabel.Text = "X";
+            this.closeLabel.Click += new System.EventHandler(this.closeLabel_Click);
+            // 
             // DashPanel
             // 
             this.DashPanel.BackColor = System.Drawing.Color.MidnightBlue;
@@ -77,6 +125,16 @@
             this.DashPanel.Name = "DashPanel";
             this.DashPanel.Size = new System.Drawing.Size(212, 489);
             this.DashPanel.TabIndex = 2;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Gym_Management_System_SDAM2.Properties.Resources.Screenshot_2025_01_23_182521;
+            this.pictureBox1.Location = new System.Drawing.Point(58, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(93, 111);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
             // 
             // DPanel2
             // 
@@ -94,6 +152,46 @@
             this.DPanel2.Name = "DPanel2";
             this.DPanel2.Size = new System.Drawing.Size(181, 296);
             this.DPanel2.TabIndex = 0;
+            // 
+            // payBox4
+            // 
+            this.payBox4.Image = global::Gym_Management_System_SDAM2.Properties.Resources.input_onlinepngtools__8_;
+            this.payBox4.Location = new System.Drawing.Point(14, 218);
+            this.payBox4.Name = "payBox4";
+            this.payBox4.Size = new System.Drawing.Size(37, 37);
+            this.payBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.payBox4.TabIndex = 7;
+            this.payBox4.TabStop = false;
+            // 
+            // classBox2
+            // 
+            this.classBox2.Image = global::Gym_Management_System_SDAM2.Properties.Resources.input_onlinepngtools__6_;
+            this.classBox2.Location = new System.Drawing.Point(14, 87);
+            this.classBox2.Name = "classBox2";
+            this.classBox2.Size = new System.Drawing.Size(37, 37);
+            this.classBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.classBox2.TabIndex = 6;
+            this.classBox2.TabStop = false;
+            // 
+            // attenBox3
+            // 
+            this.attenBox3.Image = global::Gym_Management_System_SDAM2.Properties.Resources.input_onlinepngtools__9_;
+            this.attenBox3.Location = new System.Drawing.Point(14, 150);
+            this.attenBox3.Name = "attenBox3";
+            this.attenBox3.Size = new System.Drawing.Size(37, 37);
+            this.attenBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.attenBox3.TabIndex = 5;
+            this.attenBox3.TabStop = false;
+            // 
+            // profBox1
+            // 
+            this.profBox1.Image = global::Gym_Management_System_SDAM2.Properties.Resources.input_onlinepngtools__7_;
+            this.profBox1.Location = new System.Drawing.Point(14, 27);
+            this.profBox1.Name = "profBox1";
+            this.profBox1.Size = new System.Drawing.Size(37, 37);
+            this.profBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.profBox1.TabIndex = 4;
+            this.profBox1.TabStop = false;
             // 
             // MpaymentsLbl
             // 
@@ -143,103 +241,6 @@
             this.MprofileLbl.Text = "Profile   ";
             this.MprofileLbl.Click += new System.EventHandler(this.MprofileLbl_Click);
             // 
-            // closeLabel
-            // 
-            this.closeLabel.AutoSize = true;
-            this.closeLabel.BackColor = System.Drawing.Color.Red;
-            this.closeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeLabel.ForeColor = System.Drawing.Color.White;
-            this.closeLabel.Location = new System.Drawing.Point(650, 9);
-            this.closeLabel.Name = "closeLabel";
-            this.closeLabel.Size = new System.Drawing.Size(20, 20);
-            this.closeLabel.TabIndex = 3;
-            this.closeLabel.Text = "X";
-            this.closeLabel.Click += new System.EventHandler(this.closeLabel_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Gym_Management_System_SDAM2.Properties.Resources.Screenshot_2025_01_23_182521;
-            this.pictureBox1.Location = new System.Drawing.Point(58, 24);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(93, 111);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 9;
-            this.pictureBox1.TabStop = false;
-            // 
-            // payBox4
-            // 
-            this.payBox4.Image = global::Gym_Management_System_SDAM2.Properties.Resources.input_onlinepngtools__8_;
-            this.payBox4.Location = new System.Drawing.Point(14, 218);
-            this.payBox4.Name = "payBox4";
-            this.payBox4.Size = new System.Drawing.Size(37, 37);
-            this.payBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.payBox4.TabIndex = 7;
-            this.payBox4.TabStop = false;
-            // 
-            // classBox2
-            // 
-            this.classBox2.Image = global::Gym_Management_System_SDAM2.Properties.Resources.input_onlinepngtools__6_;
-            this.classBox2.Location = new System.Drawing.Point(14, 87);
-            this.classBox2.Name = "classBox2";
-            this.classBox2.Size = new System.Drawing.Size(37, 37);
-            this.classBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.classBox2.TabIndex = 6;
-            this.classBox2.TabStop = false;
-            // 
-            // attenBox3
-            // 
-            this.attenBox3.Image = global::Gym_Management_System_SDAM2.Properties.Resources.input_onlinepngtools__9_;
-            this.attenBox3.Location = new System.Drawing.Point(14, 150);
-            this.attenBox3.Name = "attenBox3";
-            this.attenBox3.Size = new System.Drawing.Size(37, 37);
-            this.attenBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.attenBox3.TabIndex = 5;
-            this.attenBox3.TabStop = false;
-            // 
-            // profBox1
-            // 
-            this.profBox1.Image = global::Gym_Management_System_SDAM2.Properties.Resources.input_onlinepngtools__7_;
-            this.profBox1.Location = new System.Drawing.Point(14, 27);
-            this.profBox1.Name = "profBox1";
-            this.profBox1.Size = new System.Drawing.Size(37, 37);
-            this.profBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.profBox1.TabIndex = 4;
-            this.profBox1.TabStop = false;
-            // 
-            // ClassTopicLbl
-            // 
-            this.ClassTopicLbl.AutoSize = true;
-            this.ClassTopicLbl.BackColor = System.Drawing.Color.RoyalBlue;
-            this.ClassTopicLbl.Font = new System.Drawing.Font("Microsoft Tai Le", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClassTopicLbl.ForeColor = System.Drawing.Color.White;
-            this.ClassTopicLbl.Location = new System.Drawing.Point(366, 47);
-            this.ClassTopicLbl.Name = "ClassTopicLbl";
-            this.ClassTopicLbl.Size = new System.Drawing.Size(154, 23);
-            this.ClassTopicLbl.TabIndex = 4;
-            this.ClassTopicLbl.Text = "Available Classes";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(243, 92);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(405, 315);
-            this.dataGridView1.TabIndex = 5;
-            // 
-            // JoinClassBtn
-            // 
-            this.JoinClassBtn.BackColor = System.Drawing.Color.MidnightBlue;
-            this.JoinClassBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.JoinClassBtn.ForeColor = System.Drawing.Color.White;
-            this.JoinClassBtn.Location = new System.Drawing.Point(520, 441);
-            this.JoinClassBtn.Name = "JoinClassBtn";
-            this.JoinClassBtn.Size = new System.Drawing.Size(119, 36);
-            this.JoinClassBtn.TabIndex = 6;
-            this.JoinClassBtn.Text = "Join Now";
-            this.JoinClassBtn.UseVisualStyleBackColor = false;
-            // 
             // MemberClasses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -251,15 +252,15 @@
             this.Text = "MemberClasses";
             this.ClassPanel1.ResumeLayout(false);
             this.ClassPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.DashPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.DPanel2.ResumeLayout(false);
             this.DPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.classBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.attenBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.profBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }

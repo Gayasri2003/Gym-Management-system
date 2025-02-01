@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
-namespace gym_management_system_1
+namespace Gym_Management_System_SDAM2
 {
     internal static class Program
     {
+
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +19,7 @@ namespace gym_management_system_1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new LoginForm());
         }
     }
 }
