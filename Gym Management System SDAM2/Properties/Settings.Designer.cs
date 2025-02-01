@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Gym_Management_System_SDAM2.Properties
+namespace gym_management_system_1.Properties
 {
 
 
