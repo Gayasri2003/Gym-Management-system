@@ -46,3 +46,32 @@ SELECT * FROM Users;
 SELECT * FROM Members;
 SELECT * FROM Trainers;
 
+CREATE TABLE Classes(
+ClassID INT IDENTITY(1, 1) PRIMARY KEY,
+ClassName NVARCHAR(100) NOT NULL,
+Instructor NVARCHAR(100)NOT NULL,
+Schedule NVARCHAR(100)NOT NULL,
+Available BIT NOT NULL DEFAULT 1);
+
+INSERT INTO Classes(ClassName, Instructor,Schedule,Available)
+VALUES ('Cardio', 'John Doe', 'Monday & Wednesday - 6:00 PM', 1);
+
+INSERT INTO Classes(ClassName, Instructor,Schedule,Available)
+VALUES('Yoga', 'Jane Smith', 'Tuesday & Thursday - 7:00 AM', 1);
+
+INSERT INTO Classes(ClassName, Instructor,Schedule,Available)
+VALUES('Aerobics', 'Emily Johnson', 'Friday - 5:30 PM', 1);
+
+INSERT INTO Classes(ClassName, Instructor,Schedule,Available)
+VALUES('Strength Training', 'Michael Brown', 'Saturday - 10:00 AM', 1);
+
+CREATE TABLE MemberClasses (
+    MemberID INT,
+    ClassID INT,
+    FOREIGN KEY (MemberID) REFERENCES Members(UserID)  ON DELETE CASCADE,
+    FOREIGN KEY (ClassID) REFERENCES Classes(ClassID)  ON DELETE CASCADE,
+    PRIMARY KEY (MemberID, ClassID)
+);
+
+
+SELECT*FROM MemberClasses
