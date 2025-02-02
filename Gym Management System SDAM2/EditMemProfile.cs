@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,20 +18,27 @@ namespace Gym_Management_System_SDAM2
         private string password;
         private DB_Helper dbHelper;
         private Members currentMember;
-        public EditMemProfile(string username, string password, Members member, string connectionString)
+        public EditMemProfile(string username, string password, DB_Helper dbHelper, Members currentMember)
         {
             InitializeComponent();
             this.username = username;
             this.password = password;
-            currentMember = member;
+            this.currentMember = currentMember;
+            this.dbHelper = dbHelper;
             LoadMemberData();
 
-            dbHelper = new DB_Helper(connectionString);
-
         }
+
+        public EditMemProfile(string username, string password)
+        {
+            this.username = username;
+            this.password = password;
+        }
+
         private void LoadMemberData()
         {
-            // Populate form controls with the member's current details
+            
+  
             txtFname.Text = currentMember.FirstName;
             txtLname.Text = currentMember.LastName;
             dateTimePicker1.Value = currentMember.DateOfBirth;
@@ -104,13 +112,14 @@ namespace Gym_Management_System_SDAM2
             currentMember.SetPassword(txtPwd.Text);
             currentMember.MembershipType = txtMemTyp.Text;
 
-
-            bool success = dbHelper.UpdateMemberProfile(currentMember);
+        
+            bool success = dbHelper.UpdateMemberProfile();
 
             if (success)
             {
                 MessageBox.Show("Profile updated successfully!");
-                MemberProfile memberProfileForm = new MemberProfile(username, password, currentMember);
+
+                MemberProfile memberProfileForm = new MemberProfile(username,password);
                 memberProfileForm.Show();
                 this.Close();
             }

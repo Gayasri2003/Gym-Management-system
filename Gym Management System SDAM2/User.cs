@@ -75,19 +75,7 @@ namespace Gym_Management_System_SDAM2
         public string Username { get; set; }
 
         private string password;
-        public string Password
-        {
-            get { return password; }
-            private set
-            {
-                if (value.Length >= 6)
-                {
-                    password = value;
-                }
-                
-            }
-        }
-
+        public string Password { get; set; }
 
 
         //set password
@@ -118,6 +106,7 @@ namespace Gym_Management_System_SDAM2
         }
         public void DisplayUserInfo()
         {
+            Console.WriteLine($"UserID: {UserID}");
             Console.WriteLine($"Name: {FirstName} {LastName}");
             Console.WriteLine($"Date of Birth: {DateOfBirth.ToShortDateString()}");
             Console.WriteLine($"Contact: {ContactNumber}");

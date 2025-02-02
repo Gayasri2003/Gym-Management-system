@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.closeLable = new System.Windows.Forms.Label();
             this.conJoinBtn = new System.Windows.Forms.Button();
             this.combClass = new System.Windows.Forms.ComboBox();
             this.TopicLbl = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@
             this.AttendLbl = new System.Windows.Forms.Label();
             this.MclassLbl = new System.Windows.Forms.Label();
             this.MprofileLbl = new System.Windows.Forms.Label();
-            this.closeLable = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.DashPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
@@ -67,6 +67,19 @@
             this.panel1.Size = new System.Drawing.Size(682, 489);
             this.panel1.TabIndex = 0;
             // 
+            // closeLable
+            // 
+            this.closeLable.AutoSize = true;
+            this.closeLable.BackColor = System.Drawing.Color.Red;
+            this.closeLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeLable.ForeColor = System.Drawing.Color.White;
+            this.closeLable.Location = new System.Drawing.Point(650, 9);
+            this.closeLable.Name = "closeLable";
+            this.closeLable.Size = new System.Drawing.Size(20, 20);
+            this.closeLable.TabIndex = 11;
+            this.closeLable.Text = "X";
+            this.closeLable.Click += new System.EventHandler(this.closeLable_Click);
+            // 
             // conJoinBtn
             // 
             this.conJoinBtn.BackColor = System.Drawing.Color.MidnightBlue;
@@ -87,6 +100,7 @@
             this.combClass.Name = "combClass";
             this.combClass.Size = new System.Drawing.Size(356, 24);
             this.combClass.TabIndex = 9;
+            this.combClass.SelectedIndexChanged += new System.EventHandler(this.combClass_SelectedIndexChanged);
             // 
             // TopicLbl
             // 
@@ -224,19 +238,6 @@
             this.MprofileLbl.TabIndex = 0;
             this.MprofileLbl.Text = "Profile   ";
             this.MprofileLbl.Click += new System.EventHandler(this.MprofileLbl_Click);
-            // 
-            // closeLable
-            // 
-            this.closeLable.AutoSize = true;
-            this.closeLable.BackColor = System.Drawing.Color.Red;
-            this.closeLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.closeLable.ForeColor = System.Drawing.Color.White;
-            this.closeLable.Location = new System.Drawing.Point(650, 9);
-            this.closeLable.Name = "closeLable";
-            this.closeLable.Size = new System.Drawing.Size(20, 20);
-            this.closeLable.TabIndex = 11;
-            this.closeLable.Text = "X";
-            this.closeLable.Click += new System.EventHandler(this.closeLable_Click);
             // 
             // MemJoinClass
             // 

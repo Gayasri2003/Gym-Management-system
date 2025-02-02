@@ -23,12 +23,12 @@ namespace Gym_Management_System_SDAM2
         private DB_Helper _dbHelper;
 
         //member join
-        public MemJoinClass(int memberID, string username, string password, string connectionString)
+        public MemJoinClass(int memberID, string username, string password,string connectionString)
         {
             InitializeComponent();
             this.username = username;
             this.password = password;
-            _memberID = memberID;
+           
 
             _dbHelper = new DB_Helper(connectionString);
 
@@ -42,7 +42,6 @@ namespace Gym_Management_System_SDAM2
         {
             try
             {
-
                 List<GymClass> availableClasses = _dbHelper.GetAvailableClassesForComboBox();
 
                 // Clear any previous entries
@@ -120,6 +119,18 @@ namespace Gym_Management_System_SDAM2
         private void closeLable_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void combClass_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (combClass.SelectedItem is GymClass selectedClass)
+            {
+                MessageBox.Show($"Class Name: {selectedClass.ClassName}\n" +
+                                $"Instructor: {selectedClass.Instructor}\n" +
+                                $"Schedule: {selectedClass.Schedule}",
+                                "Class Details", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
     }
 }

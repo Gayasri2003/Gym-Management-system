@@ -11,11 +11,13 @@ namespace Gym_Management_System_SDAM2
 {
     public class DB_Helper
     {
-        private string connectionString = @"Data Source=(local)\SQLEXPRESS;Initial Catalog=GymDatabase;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private static string connectionString = @"Data Source=(local)\SQLEXPRESS;Initial Catalog=GymDatabase;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private static SqlDbType memberId;
 
-        public DB_Helper(string connectionString)
+        public DB_Helper() { }
+        public DB_Helper(string connString)
         {
-            this.connectionString = connectionString;
+            connectionString = connString;
         }
 
         //Register new user 
@@ -81,13 +83,13 @@ namespace Gym_Management_System_SDAM2
             SELECT u.*, m.MembershipStartDate, m.MembershipType
             FROM Users u
             JOIN Members m ON u.UserID = m.UserID
-            WHERE u.Username = @Username AND u.Password = @Password";
+            WHERE u.Username = @Username";
 
 
                 using (SqlCommand cmd = new SqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Username", username);
-                    cmd.Parameters.AddWithValue("@Password", password);
+
 
                     conn.Open();
 
@@ -107,7 +109,7 @@ namespace Gym_Management_System_SDAM2
                                 reader["Email"].ToString(),
                                 reader["Gender"].ToString(),
                                 reader["Username"].ToString(),
-                                reader["Password"].ToString(),
+                                "",
                                 reader["Role"].ToString(),
                                 reader["MembershipStartDate"] == DBNull.Value ? (DateTime?)null : Convert.ToDateTime(reader["MembershipStartDate"]),
                                 reader["MembershipType"] == DBNull.Value ? null : reader["MembershipType"].ToString()
@@ -176,7 +178,7 @@ namespace Gym_Management_System_SDAM2
                 catch (Exception ex)
                 {
                     throw new Exception("Error fetching available classes: " + ex.Message);
-                }    
+                }
             }
             return classes;
         }
@@ -226,9 +228,9 @@ namespace Gym_Management_System_SDAM2
                 try
                 {
                     conn.Open();
-                    int count = (int)checkCmd.ExecuteScalar(); 
+                    int count = (int)checkCmd.ExecuteScalar();
 
-                    if (count == 0) 
+                    if (count == 0)
                     {
                         string insertQuery = "INSERT INTO MemberClasses (MemberID, ClassID) VALUES (@MemberID, @ClassID)";
                         SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
@@ -249,10 +251,12 @@ namespace Gym_Management_System_SDAM2
                 }
             }
         }
+
+
         // update edit profile details to database
         public bool UpdateMemberProfile(Members member)
         {
-            string query = "UPDATE Members SET FirstName = @FirstName, LastName = @LastName,DateOfBirth = @DateOfBirth, ContactNumber = @ContactNumber, City = @City, Email = @Email, " +
+            string query = @"UPDATE Users SET FirstName = @FirstName, LastName = @LastName,DateOfBirth = @DateOfBirth, ContactNumber = @ContactNumber, City = @City, Email = @Email, " +
                            "Username = @Username, Password = @Password, Gender = @Gender, MembershipType = @MembershipType WHERE UserID = @UserID";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -270,11 +274,191 @@ namespace Gym_Management_System_SDAM2
                 command.Parameters.AddWithValue("@MembershipType", member.MembershipType);
                 command.Parameters.AddWithValue("@UserID", member.UserID);
 
-                connection.Open();
-                int rowsAffected = command.ExecuteNonQuery();
-                return rowsAffected > 0;
+
+                try
+                {
+                    connection.Open();
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error: " + ex.Message);
+                    return false;
+                }
+            }
+        }
+
+        // make attendance
+        public static int ExecuteNonQuery(string query, SqlParameter[] parameters = null)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    if (parameters != null)
+                        cmd.Parameters.AddRange(parameters);
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        // Execute SELECT queries and return DataTable
+        public static DataTable ExecuteQuery(string query, SqlParameter[] parameters = null)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    if (parameters != null)
+                        cmd.Parameters.AddRange(parameters);
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
+        //check username exists
+        public static bool CheckIfUsernameExists(string username)
+        {
+            string query = "SELECT COUNT(*) FROM Members WHERE Username = @username";
+            SqlParameter[] parameters = { new SqlParameter("@username", username) };
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddRange(parameters);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+        }
+        // Check if attendance already exists for today
+        public static bool AttendanceExists(string username)
+        {
+            string query = "SELECT COUNT(*) FROM Attendance WHERE Username = @username AND Date = CAST(GETDATE() AS DATE)";
+            SqlParameter[] parameters = { new SqlParameter("@username", username) };
+
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                con.Open();
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddRange(parameters);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+        }
+
+        // Insert new attendance record
+        public static int MarkAttendance(string username, bool isPresent)
+        {
+            if (AttendanceExists(username))
+            {
+                return -1;
+            }
+
+            string query = "INSERT INTO Attendance (Username, Date, IsPresent) VALUES (@username, GETDATE(), @IsPresent)";
+            SqlParameter[] parameters = {
+            new SqlParameter("@username", username),
+            new SqlParameter("@IsPresent", isPresent)
+        };
+
+            return ExecuteNonQuery(query, parameters);
+        }
+
+        // Get attendance history for a member
+        public static DataTable GetAttendanceHistory(string username)
+        {
+            string query = "SELECT AttendanceId, Date, IsPresent FROM Attendance WHERE Username = @username ORDER BY Date DESC";
+            SqlParameter[] parameters = { new SqlParameter("@username", username) };
+
+            return ExecuteQuery(query, parameters);
+        }
+
+        // Update attendance record 
+        public static int UpdateAttendance(int attendanceId, bool isPresent)
+        {
+            string query = "UPDATE Attendance SET IsPresent = @IsPresent WHERE AttendanceId = @AttendanceId";
+            SqlParameter[] parameters = {
+            new SqlParameter("@IsPresent", isPresent),
+            new SqlParameter("@AttendanceId", attendanceId)
+        };
+
+            return ExecuteNonQuery(query, parameters);
+        }
+
+
+        internal bool UpdateMemberProfile()
+        {
+            throw new NotImplementedException();
+        }
+
+        //get member id
+        private static int GetMemberIDByUsername(string username)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "SELECT MemberID FROM Members WHERE Username = @Username";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    con.Open();
+                    var result = cmd.ExecuteScalar();
+                    return result != null ? Convert.ToInt32(result) : -1;
+                }
+            }
+        }
+
+        // Add Payment 
+        public static int AddPayment(string username, decimal amount, DateTime paymentDate, string paymentMethod)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = "INSERT INTO Payments (MemberID, Amount, PaymentDate, PaymentMethod) VALUES (@MemberID, @Amount, @PaymentDate, @PaymentMethod)";
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    cmd.Parameters.AddWithValue("@Amount", amount);
+                    cmd.Parameters.AddWithValue("@PaymentDate", paymentDate);
+                    cmd.Parameters.AddWithValue("@PaymentMethod", paymentMethod);
+
+                    con.Open();
+                    return cmd.ExecuteNonQuery(); 
+                }
+            }
+        }
+
+        // Get Payment History 
+        public static DataTable GetPaymentHistory(string username)
+        {
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                string query = @"
+                SELECT p.PaymentID, m.Username, p.Amount, p.PaymentDate, p.PaymentMethod
+                FROM Payments p
+                INNER JOIN Members m ON p.MemberID = m.MemberID
+                WHERE m.Username = @Username
+                ORDER BY p.PaymentDate DESC";
+
+                using (SqlCommand cmd = new SqlCommand(query, con))
+                {
+                    cmd.Parameters.AddWithValue("@Username", username);
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        return dt;
+                    }
+                }
             }
         }
     }
-
 }

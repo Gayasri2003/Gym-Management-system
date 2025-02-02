@@ -8,6 +8,7 @@ namespace Gym_Management_System_SDAM2
 {
     public class Members:User
     {
+    
         public DateTime? MembershipStartDate { get; set; }
         public string MembershipType { get; set; }
 

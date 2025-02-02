@@ -15,16 +15,17 @@ namespace Gym_Management_System_SDAM2
         private string username;
         private string password;
         private Members memberProfile;
-        private Members currentMember;
+       // private Members currentMember;
+        private DB_Helper dbHelper;
 
 
-        private DB_Helper dbHelper = new DB_Helper();
-        public MemberProfile(string username, string password, Members member)
+        public MemberProfile(string username, string password )//Members currentMember)
         {
             InitializeComponent();
             this.username = username;
             this.password = password;
-            currentMember = member;
+            //this.currentMember = currentMember;
+            dbHelper = new DB_Helper(@"Data Source=(local)\SQLEXPRESS;Initial Catalog=GymDatabase;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
             LoadMemberProfile();
         }
         private void LoadMemberProfile()

@@ -17,6 +17,10 @@ namespace Gym_Management_System_SDAM2
         private string password;
 
         private DB_Helper dbHelper;
+        private int memberID;
+     
+        private string connectionString = @"Data Source=(local)\SQLEXPRESS;Initial Catalog=GymDatabase;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+
         public MemberClasses(string username, string password)
         {
             InitializeComponent();
@@ -88,8 +92,11 @@ namespace Gym_Management_System_SDAM2
 
         private void JoinClassBtn_Click(object sender, EventArgs e)
         {
-            MemJoinClass memJoinClassForm = new MemJoinClass();
-            memJoinClassForm.ShowDialog();
+            MemJoinClass memJoinClassForm = new MemJoinClass(memberID, username, password, connectionString);
+
+            // Show the form and hide the current one
+            memJoinClassForm.Show();
+            this.Hide();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

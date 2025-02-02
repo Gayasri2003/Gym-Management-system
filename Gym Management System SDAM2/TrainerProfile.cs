@@ -13,49 +13,13 @@ namespace Gym_Management_System_SDAM2
 {
     public partial class TrainerProfile : Form
     {
-        string connectionString = "Server=(local)\\SQLEXPRESS;Database=GymDatabase;Integrated Security=True;";
-        private string username; 
-        public TrainerProfile(string username)
+        string connectionString = "Server=(local)\\SQLEXPRESS;Database=Gym_Management_System_SDAM2;Integrated Security=True;";
+        public TrainerProfile()
         {
             InitializeComponent();
-            this.username = username; 
-            LoadTrainerProfile();
-        }
-        private void LoadTrainerProfile()
-        {
-            try
-            {
-                using (SqlConnection connection = new SqlConnection(connectionString))
-                {
-                    connection.Open();
-                    string query = "SELECT FirstName, LastName, ContactNumber, Gender, City " +
-                                   "FROM Users WHERE Username = @Username";
-
-                    using (SqlCommand command = new SqlCommand(query, connection))
-                    {
-                        command.Parameters.AddWithValue("@Username", username);
-
-                        using (SqlDataReader reader = command.ExecuteReader())
-                        {
-                            if (reader.Read())
-                            {
-                                // Display the data in labels (ensure you have labels like lblFirstName, lblLastName, etc.)
-                                fName.Text = reader["FirstName"].ToString();
-                                lName.Text = reader["LastName"].ToString();
-                                cOntact.Text = reader["ContactNumber"].ToString();
-                                gEnder.Text = reader["Gender"].ToString();
-                                cIty.Text = reader["City"].ToString();
-                            }
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error loading profile: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
 
+        
 
         private void homeLogout_Click(object sender, EventArgs e)
         {
@@ -66,8 +30,12 @@ namespace Gym_Management_System_SDAM2
 
         private void homeLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            TrainerProfile profileForm = new TrainerProfile(username);
-            profileForm.Show();
+            // Open the Home form
+            TrainerProfile homeForm = new TrainerProfile();
+            homeForm.Show();
+
+            // Close or hide the current form
+            this.Hide();
         }
 
         private void classLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -88,11 +56,6 @@ namespace Gym_Management_System_SDAM2
 
             // Close or hide the current form
             this.Hide();
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
