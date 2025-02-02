@@ -15,13 +15,16 @@ namespace Gym_Management_System_SDAM2
         private string username;
         private string password;
         private Members memberProfile;
+        private Members currentMember;
+
 
         private DB_Helper dbHelper = new DB_Helper();
-        public MemberProfile(string username, string password)
+        public MemberProfile(string username, string password, Members member)
         {
             InitializeComponent();
             this.username = username;
             this.password = password;
+            currentMember = member;
             LoadMemberProfile();
         }
         private void LoadMemberProfile()
@@ -109,5 +112,6 @@ namespace Gym_Management_System_SDAM2
         {
 
         }
+
     }
 }

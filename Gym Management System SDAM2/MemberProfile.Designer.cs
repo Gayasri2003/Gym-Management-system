@@ -30,6 +30,16 @@
         {
             this.closeLabel = new System.Windows.Forms.Label();
             this.MemPanel1 = new System.Windows.Forms.Panel();
+            this.MTlbl = new System.Windows.Forms.Label();
+            this.MSDlbl = new System.Windows.Forms.Label();
+            this.UNamelbl = new System.Windows.Forms.Label();
+            this.Genlbl = new System.Windows.Forms.Label();
+            this.MailLbl = new System.Windows.Forms.Label();
+            this.Citylbl = new System.Windows.Forms.Label();
+            this.CNumLbl = new System.Windows.Forms.Label();
+            this.DoBlbl = new System.Windows.Forms.Label();
+            this.LNamelbl = new System.Windows.Forms.Label();
+            this.Fnamelbl = new System.Windows.Forms.Label();
             this.lblMembershipType = new System.Windows.Forms.Label();
             this.lblMembershipStartDate = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
@@ -52,16 +62,6 @@
             this.AttendLbl = new System.Windows.Forms.Label();
             this.MclassLbl = new System.Windows.Forms.Label();
             this.MprofileLbl = new System.Windows.Forms.Label();
-            this.Fnamelbl = new System.Windows.Forms.Label();
-            this.LNamelbl = new System.Windows.Forms.Label();
-            this.DoBlbl = new System.Windows.Forms.Label();
-            this.CNumLbl = new System.Windows.Forms.Label();
-            this.Citylbl = new System.Windows.Forms.Label();
-            this.MailLbl = new System.Windows.Forms.Label();
-            this.Genlbl = new System.Windows.Forms.Label();
-            this.UNamelbl = new System.Windows.Forms.Label();
-            this.MSDlbl = new System.Windows.Forms.Label();
-            this.MTlbl = new System.Windows.Forms.Label();
             this.MemPanel1.SuspendLayout();
             this.DashPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
@@ -117,8 +117,102 @@
             this.MemPanel1.Size = new System.Drawing.Size(682, 489);
             this.MemPanel1.TabIndex = 1;
             // 
+            // MTlbl
+            // 
+            this.MTlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MTlbl.Location = new System.Drawing.Point(469, 316);
+            this.MTlbl.Name = "MTlbl";
+            this.MTlbl.Size = new System.Drawing.Size(80, 18);
+            this.MTlbl.TabIndex = 22;
+            this.MTlbl.Text = "Mem Type :";
+            // 
+            // MSDlbl
+            // 
+            this.MSDlbl.AutoSize = true;
+            this.MSDlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MSDlbl.Location = new System.Drawing.Point(249, 317);
+            this.MSDlbl.Name = "MSDlbl";
+            this.MSDlbl.Size = new System.Drawing.Size(87, 18);
+            this.MSDlbl.TabIndex = 21;
+            this.MSDlbl.Text = "membership:";
+            // 
+            // UNamelbl
+            // 
+            this.UNamelbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.UNamelbl.Location = new System.Drawing.Point(469, 258);
+            this.UNamelbl.Name = "UNamelbl";
+            this.UNamelbl.Size = new System.Drawing.Size(80, 18);
+            this.UNamelbl.TabIndex = 20;
+            this.UNamelbl.Text = "Username :";
+            // 
+            // Genlbl
+            // 
+            this.Genlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Genlbl.Location = new System.Drawing.Point(249, 256);
+            this.Genlbl.Name = "Genlbl";
+            this.Genlbl.Size = new System.Drawing.Size(80, 18);
+            this.Genlbl.TabIndex = 19;
+            this.Genlbl.Text = "Gender :";
+            // 
+            // MailLbl
+            // 
+            this.MailLbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MailLbl.Location = new System.Drawing.Point(471, 198);
+            this.MailLbl.Name = "MailLbl";
+            this.MailLbl.Size = new System.Drawing.Size(80, 18);
+            this.MailLbl.TabIndex = 18;
+            this.MailLbl.Text = "Email :";
+            // 
+            // Citylbl
+            // 
+            this.Citylbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Citylbl.Location = new System.Drawing.Point(249, 198);
+            this.Citylbl.Name = "Citylbl";
+            this.Citylbl.Size = new System.Drawing.Size(80, 18);
+            this.Citylbl.TabIndex = 17;
+            this.Citylbl.Text = "City :";
+            // 
+            // CNumLbl
+            // 
+            this.CNumLbl.AutoSize = true;
+            this.CNumLbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.CNumLbl.Location = new System.Drawing.Point(471, 141);
+            this.CNumLbl.Name = "CNumLbl";
+            this.CNumLbl.Size = new System.Drawing.Size(78, 18);
+            this.CNumLbl.TabIndex = 16;
+            this.CNumLbl.Text = "Contact No:";
+            // 
+            // DoBlbl
+            // 
+            this.DoBlbl.AutoSize = true;
+            this.DoBlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.DoBlbl.Location = new System.Drawing.Point(249, 141);
+            this.DoBlbl.Name = "DoBlbl";
+            this.DoBlbl.Size = new System.Drawing.Size(84, 18);
+            this.DoBlbl.TabIndex = 15;
+            this.DoBlbl.Text = "Date of Birth:";
+            // 
+            // LNamelbl
+            // 
+            this.LNamelbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LNamelbl.Location = new System.Drawing.Point(471, 82);
+            this.LNamelbl.Name = "LNamelbl";
+            this.LNamelbl.Size = new System.Drawing.Size(80, 18);
+            this.LNamelbl.TabIndex = 14;
+            this.LNamelbl.Text = "Last Name :";
+            // 
+            // Fnamelbl
+            // 
+            this.Fnamelbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Fnamelbl.Location = new System.Drawing.Point(249, 82);
+            this.Fnamelbl.Name = "Fnamelbl";
+            this.Fnamelbl.Size = new System.Drawing.Size(80, 18);
+            this.Fnamelbl.TabIndex = 13;
+            this.Fnamelbl.Text = "First Name :";
+            // 
             // lblMembershipType
             // 
+            this.lblMembershipType.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lblMembershipType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblMembershipType.Location = new System.Drawing.Point(572, 321);
             this.lblMembershipType.Name = "lblMembershipType";
@@ -128,6 +222,7 @@
             // 
             // lblMembershipStartDate
             // 
+            this.lblMembershipStartDate.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lblMembershipStartDate.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblMembershipStartDate.Location = new System.Drawing.Point(344, 316);
             this.lblMembershipStartDate.Name = "lblMembershipStartDate";
@@ -137,6 +232,7 @@
             // 
             // lblUsername
             // 
+            this.lblUsername.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lblUsername.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblUsername.Location = new System.Drawing.Point(344, 258);
             this.lblUsername.Name = "lblUsername";
@@ -147,6 +243,7 @@
             // 
             // lblGender
             // 
+            this.lblGender.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lblGender.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblGender.Location = new System.Drawing.Point(572, 258);
             this.lblGender.Name = "lblGender";
@@ -156,24 +253,29 @@
             // 
             // lblEmail
             // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lblEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblEmail.Location = new System.Drawing.Point(572, 198);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(75, 18);
+            this.lblEmail.Size = new System.Drawing.Size(46, 18);
             this.lblEmail.TabIndex = 8;
             this.lblEmail.Text = "label6";
             // 
             // lblCity
             // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lblCity.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblCity.Location = new System.Drawing.Point(344, 198);
             this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(75, 18);
+            this.lblCity.Size = new System.Drawing.Size(46, 18);
             this.lblCity.TabIndex = 7;
             this.lblCity.Text = "label5";
             // 
             // lblContactNumber
             // 
+            this.lblContactNumber.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lblContactNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblContactNumber.Location = new System.Drawing.Point(572, 141);
             this.lblContactNumber.Name = "lblContactNumber";
@@ -183,6 +285,7 @@
             // 
             // lblDateOfBirth
             // 
+            this.lblDateOfBirth.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lblDateOfBirth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblDateOfBirth.Location = new System.Drawing.Point(344, 141);
             this.lblDateOfBirth.Name = "lblDateOfBirth";
@@ -192,6 +295,7 @@
             // 
             // lblLastName
             // 
+            this.lblLastName.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lblLastName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblLastName.Location = new System.Drawing.Point(572, 82);
             this.lblLastName.Name = "lblLastName";
@@ -201,7 +305,7 @@
             // 
             // lblFirstName
             // 
-            this.lblFirstName.BackColor = System.Drawing.Color.White;
+            this.lblFirstName.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.lblFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblFirstName.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.lblFirstName.Location = new System.Drawing.Point(344, 82);
@@ -349,99 +453,6 @@
             this.MprofileLbl.TabIndex = 0;
             this.MprofileLbl.Text = "Profile   ";
             this.MprofileLbl.Click += new System.EventHandler(this.MprofileLbl_Click);
-            // 
-            // Fnamelbl
-            // 
-            this.Fnamelbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Fnamelbl.Location = new System.Drawing.Point(249, 82);
-            this.Fnamelbl.Name = "Fnamelbl";
-            this.Fnamelbl.Size = new System.Drawing.Size(80, 18);
-            this.Fnamelbl.TabIndex = 13;
-            this.Fnamelbl.Text = "First Name :";
-            // 
-            // LNamelbl
-            // 
-            this.LNamelbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LNamelbl.Location = new System.Drawing.Point(471, 82);
-            this.LNamelbl.Name = "LNamelbl";
-            this.LNamelbl.Size = new System.Drawing.Size(80, 18);
-            this.LNamelbl.TabIndex = 14;
-            this.LNamelbl.Text = "Last Name :";
-            // 
-            // DoBlbl
-            // 
-            this.DoBlbl.AutoSize = true;
-            this.DoBlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.DoBlbl.Location = new System.Drawing.Point(249, 141);
-            this.DoBlbl.Name = "DoBlbl";
-            this.DoBlbl.Size = new System.Drawing.Size(84, 18);
-            this.DoBlbl.TabIndex = 15;
-            this.DoBlbl.Text = "Date of Birth:";
-            // 
-            // CNumLbl
-            // 
-            this.CNumLbl.AutoSize = true;
-            this.CNumLbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.CNumLbl.Location = new System.Drawing.Point(471, 141);
-            this.CNumLbl.Name = "CNumLbl";
-            this.CNumLbl.Size = new System.Drawing.Size(78, 18);
-            this.CNumLbl.TabIndex = 16;
-            this.CNumLbl.Text = "Contact No:";
-            // 
-            // Citylbl
-            // 
-            this.Citylbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Citylbl.Location = new System.Drawing.Point(249, 198);
-            this.Citylbl.Name = "Citylbl";
-            this.Citylbl.Size = new System.Drawing.Size(80, 18);
-            this.Citylbl.TabIndex = 17;
-            this.Citylbl.Text = "City :";
-            // 
-            // MailLbl
-            // 
-            this.MailLbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MailLbl.Location = new System.Drawing.Point(471, 198);
-            this.MailLbl.Name = "MailLbl";
-            this.MailLbl.Size = new System.Drawing.Size(80, 18);
-            this.MailLbl.TabIndex = 18;
-            this.MailLbl.Text = "Email :";
-            // 
-            // Genlbl
-            // 
-            this.Genlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Genlbl.Location = new System.Drawing.Point(249, 256);
-            this.Genlbl.Name = "Genlbl";
-            this.Genlbl.Size = new System.Drawing.Size(80, 18);
-            this.Genlbl.TabIndex = 19;
-            this.Genlbl.Text = "Gender :";
-            // 
-            // UNamelbl
-            // 
-            this.UNamelbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.UNamelbl.Location = new System.Drawing.Point(469, 258);
-            this.UNamelbl.Name = "UNamelbl";
-            this.UNamelbl.Size = new System.Drawing.Size(80, 18);
-            this.UNamelbl.TabIndex = 20;
-            this.UNamelbl.Text = "Username :";
-            // 
-            // MSDlbl
-            // 
-            this.MSDlbl.AutoSize = true;
-            this.MSDlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MSDlbl.Location = new System.Drawing.Point(249, 317);
-            this.MSDlbl.Name = "MSDlbl";
-            this.MSDlbl.Size = new System.Drawing.Size(87, 18);
-            this.MSDlbl.TabIndex = 21;
-            this.MSDlbl.Text = "membership:";
-            // 
-            // MTlbl
-            // 
-            this.MTlbl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.MTlbl.Location = new System.Drawing.Point(469, 316);
-            this.MTlbl.Name = "MTlbl";
-            this.MTlbl.Size = new System.Drawing.Size(80, 18);
-            this.MTlbl.TabIndex = 22;
-            this.MTlbl.Text = "Mem Type :";
             // 
             // MemberProfile
             // 

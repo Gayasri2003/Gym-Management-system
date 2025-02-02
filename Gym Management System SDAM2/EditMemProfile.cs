@@ -15,19 +15,46 @@ namespace Gym_Management_System_SDAM2
     {
         private string username;
         private string password;
-        public EditMemProfile(string username, string password)
+        private DB_Helper dbHelper;
+        private Members currentMember;
+        public EditMemProfile(string username, string password, Members member, string connectionString)
         {
             InitializeComponent();
             this.username = username;
             this.password = password;
-        }
+            currentMember = member;
+            LoadMemberData();
 
+            dbHelper = new DB_Helper(connectionString);
+
+        }
+        private void LoadMemberData()
+        {
+            // Populate form controls with the member's current details
+            txtFname.Text = currentMember.FirstName;
+            txtLname.Text = currentMember.LastName;
+            dateTimePicker1.Value = currentMember.DateOfBirth;
+            txtContact.Text = currentMember.ContactNumber;
+            txtCity.Text = currentMember.City;
+            txtMail.Text = currentMember.Email;
+            if (currentMember.Gender == "Male")
+            {
+                MaleBtn.Checked = true;
+            }
+            else if (currentMember.Gender == "Female")
+            {
+                FemaleBtn.Checked = true;
+            }
+            txtUname.Text = currentMember.Username;
+            txtPwd.Text = currentMember.Password;
+            txtMemTyp.Text = currentMember.MembershipType;
+        }
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
 
-       
+
         private void MprofileLbl_Click(object sender, EventArgs e)
         {
             MemberProfile memberProfileForm = new MemberProfile(username, password);
@@ -59,7 +86,39 @@ namespace Gym_Management_System_SDAM2
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
+            currentMember.FirstName = txtFname.Text;
+            currentMember.LastName = txtLname.Text;
+            currentMember.DateOfBirth = dateTimePicker1.Value;
+            currentMember.ContactNumber = txtContact.Text;
+            currentMember.City = txtCity.Text;
+            currentMember.Email = txtMail.Text;
+            if (MaleBtn.Checked)
+            {
+                currentMember.Gender = "Male";
+            }
+            else if (FemaleBtn.Checked)
+            {
+                currentMember.Gender = "Female";
+            }
+            currentMember.Username = txtUname.Text;
+            currentMember.SetPassword(txtPwd.Text);
+            currentMember.MembershipType = txtMemTyp.Text;
 
+
+            bool success = dbHelper.UpdateMemberProfile(currentMember);
+
+            if (success)
+            {
+                MessageBox.Show("Profile updated successfully!");
+                MemberProfile memberProfileForm = new MemberProfile(username, password, currentMember);
+                memberProfileForm.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Failed to update profile.");
+            }
         }
     }
 }
+

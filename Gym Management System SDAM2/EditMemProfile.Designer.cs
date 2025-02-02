@@ -33,10 +33,10 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.FemaleBtn = new System.Windows.Forms.RadioButton();
             this.MaleBtn = new System.Windows.Forms.RadioButton();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtMail = new System.Windows.Forms.TextBox();
+            this.txtCity = new System.Windows.Forms.TextBox();
+            this.txtContact = new System.Windows.Forms.TextBox();
+            this.txtFname = new System.Windows.Forms.TextBox();
             this.NameLabel = new System.Windows.Forms.Label();
             this.BdayLabel = new System.Windows.Forms.Label();
             this.GenderLabel = new System.Windows.Forms.Label();
@@ -55,6 +55,15 @@
             this.AttendLbl = new System.Windows.Forms.Label();
             this.MclassLbl = new System.Windows.Forms.Label();
             this.MprofileLbl = new System.Windows.Forms.Label();
+            this.topicLbl = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtLname = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtUname = new System.Windows.Forms.TextBox();
+            this.txtPwd = new System.Windows.Forms.TextBox();
+            this.txtMemTyp = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.DashPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
@@ -68,14 +77,23 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.txtMemTyp);
+            this.panel1.Controls.Add(this.txtPwd);
+            this.panel1.Controls.Add(this.txtUname);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.txtLname);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.topicLbl);
             this.panel1.Controls.Add(this.closeLabel);
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.FemaleBtn);
             this.panel1.Controls.Add(this.MaleBtn);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtMail);
+            this.panel1.Controls.Add(this.txtCity);
+            this.panel1.Controls.Add(this.txtContact);
+            this.panel1.Controls.Add(this.txtFname);
             this.panel1.Controls.Add(this.NameLabel);
             this.panel1.Controls.Add(this.BdayLabel);
             this.panel1.Controls.Add(this.GenderLabel);
@@ -113,7 +131,7 @@
             // FemaleBtn
             // 
             this.FemaleBtn.AutoSize = true;
-            this.FemaleBtn.Location = new System.Drawing.Point(417, 370);
+            this.FemaleBtn.Location = new System.Drawing.Point(523, 289);
             this.FemaleBtn.Name = "FemaleBtn";
             this.FemaleBtn.Size = new System.Drawing.Size(74, 20);
             this.FemaleBtn.TabIndex = 29;
@@ -124,7 +142,7 @@
             // MaleBtn
             // 
             this.MaleBtn.AutoSize = true;
-            this.MaleBtn.Location = new System.Drawing.Point(417, 337);
+            this.MaleBtn.Location = new System.Drawing.Point(417, 289);
             this.MaleBtn.Name = "MaleBtn";
             this.MaleBtn.Size = new System.Drawing.Size(58, 20);
             this.MaleBtn.TabIndex = 28;
@@ -132,52 +150,52 @@
             this.MaleBtn.Text = "Male";
             this.MaleBtn.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // txtMail
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox5.Location = new System.Drawing.Point(417, 279);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(223, 22);
-            this.textBox5.TabIndex = 27;
-            this.textBox5.Text = "\r\n";
+            this.txtMail.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtMail.Location = new System.Drawing.Point(417, 250);
+            this.txtMail.Name = "txtMail";
+            this.txtMail.Size = new System.Drawing.Size(223, 22);
+            this.txtMail.TabIndex = 27;
+            this.txtMail.Text = "\r\n";
             // 
-            // textBox4
+            // txtCity
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox4.Location = new System.Drawing.Point(417, 230);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(223, 22);
-            this.textBox4.TabIndex = 26;
-            this.textBox4.Text = "\r\n";
+            this.txtCity.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtCity.Location = new System.Drawing.Point(417, 207);
+            this.txtCity.Name = "txtCity";
+            this.txtCity.Size = new System.Drawing.Size(223, 22);
+            this.txtCity.TabIndex = 26;
+            this.txtCity.Text = "\r\n";
             // 
-            // textBox3
+            // txtContact
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox3.Location = new System.Drawing.Point(417, 178);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(223, 22);
-            this.textBox3.TabIndex = 25;
-            this.textBox3.Text = "\r\n";
+            this.txtContact.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtContact.Location = new System.Drawing.Point(417, 168);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.Size = new System.Drawing.Size(223, 22);
+            this.txtContact.TabIndex = 25;
+            this.txtContact.Text = "\r\n";
             // 
-            // textBox1
+            // txtFname
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.textBox1.Location = new System.Drawing.Point(417, 78);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(223, 22);
-            this.textBox1.TabIndex = 23;
-            this.textBox1.Text = "\r\n";
+            this.txtFname.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtFname.Location = new System.Drawing.Point(377, 58);
+            this.txtFname.Name = "txtFname";
+            this.txtFname.Size = new System.Drawing.Size(263, 22);
+            this.txtFname.TabIndex = 23;
+            this.txtFname.Text = "\r\n";
             // 
             // NameLabel
             // 
             this.NameLabel.AutoSize = true;
             this.NameLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.NameLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLabel.Location = new System.Drawing.Point(258, 81);
+            this.NameLabel.Location = new System.Drawing.Point(258, 61);
             this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(55, 19);
+            this.NameLabel.Size = new System.Drawing.Size(90, 19);
             this.NameLabel.TabIndex = 17;
-            this.NameLabel.Text = "Name:";
+            this.NameLabel.Text = "First Name:";
             // 
             // BdayLabel
             // 
@@ -195,7 +213,7 @@
             this.GenderLabel.AutoSize = true;
             this.GenderLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.GenderLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GenderLabel.Location = new System.Drawing.Point(258, 338);
+            this.GenderLabel.Location = new System.Drawing.Point(258, 289);
             this.GenderLabel.Name = "GenderLabel";
             this.GenderLabel.Size = new System.Drawing.Size(64, 19);
             this.GenderLabel.TabIndex = 22;
@@ -206,7 +224,7 @@
             this.MailLabel.AutoSize = true;
             this.MailLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.MailLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MailLabel.Location = new System.Drawing.Point(258, 233);
+            this.MailLabel.Location = new System.Drawing.Point(258, 252);
             this.MailLabel.Name = "MailLabel";
             this.MailLabel.Size = new System.Drawing.Size(51, 19);
             this.MailLabel.TabIndex = 20;
@@ -217,7 +235,7 @@
             this.CNumberLabel.AutoSize = true;
             this.CNumberLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.CNumberLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CNumberLabel.Location = new System.Drawing.Point(258, 181);
+            this.CNumberLabel.Location = new System.Drawing.Point(258, 168);
             this.CNumberLabel.Name = "CNumberLabel";
             this.CNumberLabel.Size = new System.Drawing.Size(129, 19);
             this.CNumberLabel.TabIndex = 19;
@@ -243,7 +261,7 @@
             this.CityLabel.AutoSize = true;
             this.CityLabel.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.CityLabel.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CityLabel.Location = new System.Drawing.Point(258, 282);
+            this.CityLabel.Location = new System.Drawing.Point(258, 207);
             this.CityLabel.Name = "CityLabel";
             this.CityLabel.Size = new System.Drawing.Size(40, 19);
             this.CityLabel.TabIndex = 21;
@@ -374,6 +392,94 @@
             this.MprofileLbl.Text = "Profile   ";
             this.MprofileLbl.Click += new System.EventHandler(this.MprofileLbl_Click);
             // 
+            // topicLbl
+            // 
+            this.topicLbl.BackColor = System.Drawing.Color.RoyalBlue;
+            this.topicLbl.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.topicLbl.ForeColor = System.Drawing.Color.White;
+            this.topicLbl.Location = new System.Drawing.Point(222, 21);
+            this.topicLbl.Name = "topicLbl";
+            this.topicLbl.Size = new System.Drawing.Size(100, 26);
+            this.topicLbl.TabIndex = 32;
+            this.topicLbl.Text = "Edit Profile";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(258, 97);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(90, 19);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "First Name:";
+            // 
+            // txtLname
+            // 
+            this.txtLname.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtLname.Location = new System.Drawing.Point(377, 94);
+            this.txtLname.Name = "txtLname";
+            this.txtLname.Size = new System.Drawing.Size(263, 22);
+            this.txtLname.TabIndex = 34;
+            this.txtLname.Text = "\r\n";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.label2.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(258, 333);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(84, 19);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "Username:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.label3.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(441, 333);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(80, 19);
+            this.label3.TabIndex = 36;
+            this.label3.Text = "Password:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.label4.Font = new System.Drawing.Font("Microsoft Tai Le", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(258, 397);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(139, 19);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "Membership Type:";
+            // 
+            // txtUname
+            // 
+            this.txtUname.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtUname.Location = new System.Drawing.Point(262, 355);
+            this.txtUname.Name = "txtUname";
+            this.txtUname.Size = new System.Drawing.Size(148, 22);
+            this.txtUname.TabIndex = 38;
+            // 
+            // txtPwd
+            // 
+            this.txtPwd.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtPwd.Location = new System.Drawing.Point(445, 355);
+            this.txtPwd.Name = "txtPwd";
+            this.txtPwd.Size = new System.Drawing.Size(152, 22);
+            this.txtPwd.TabIndex = 39;
+            // 
+            // txtMemTyp
+            // 
+            this.txtMemTyp.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.txtMemTyp.Location = new System.Drawing.Point(262, 427);
+            this.txtMemTyp.Name = "txtMemTyp";
+            this.txtMemTyp.Size = new System.Drawing.Size(164, 22);
+            this.txtMemTyp.TabIndex = 40;
+            // 
             // EditMemProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -411,10 +517,10 @@
         private System.Windows.Forms.Label AttendLbl;
         private System.Windows.Forms.Label MclassLbl;
         private System.Windows.Forms.Label MprofileLbl;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMail;
+        private System.Windows.Forms.TextBox txtCity;
+        private System.Windows.Forms.TextBox txtContact;
+        private System.Windows.Forms.TextBox txtFname;
         private System.Windows.Forms.Label NameLabel;
         private System.Windows.Forms.Label BdayLabel;
         private System.Windows.Forms.Label GenderLabel;
@@ -426,5 +532,14 @@
         private System.Windows.Forms.RadioButton FemaleBtn;
         private System.Windows.Forms.RadioButton MaleBtn;
         private System.Windows.Forms.Label closeLabel;
+        private System.Windows.Forms.Label topicLbl;
+        private System.Windows.Forms.TextBox txtLname;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPwd;
+        private System.Windows.Forms.TextBox txtUname;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtMemTyp;
     }
 }

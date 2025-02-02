@@ -24,7 +24,7 @@ namespace Gym_Management_System_SDAM2
         }
         public override string ToString()
         {
-            return ClassName; 
+            return $"{ClassName} - {Schedule}";
         }
     }
 

@@ -5,12 +5,18 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Gym_Management_System_SDAM2
 {
     public class DB_Helper
     {
-        private string connectionString = @"Data Source=DESKTOP-28I7HML\SQLEXPRESS;Initial Catalog=Gym_Management_System_SDAM2;Integrated Security=True;TrustServerCertificate=True";
+        private string connectionString = @"Data Source=(local)\SQLEXPRESS;Initial Catalog=GymDatabase;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+
+        public DB_Helper(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }
 
         //Register new user 
         public bool RegisterUser(User user)
@@ -116,7 +122,7 @@ namespace Gym_Management_System_SDAM2
         public List<GymClass> GetAvailableClasses()
         {
             List<GymClass> classes = new List<GymClass>();
-            string query = "SELECT ClassId, ClassName, Instructor, Schedule, FROM Classes WHERE Available = 1";
+            string query = "SELECT ClassId, ClassName, Instructor, Schedule FROM Classes WHERE Available = 1";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -149,23 +155,29 @@ namespace Gym_Management_System_SDAM2
 
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "SELECT ClassID, ClassName FROM Classes";
-                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
-                DataTable classDataTable = new DataTable();
-                adapter.Fill(classDataTable);
+                string query = "SELECT ClassID, ClassName, Instructor, Schedule FROM Classes WHERE Available = 1";
+                SqlCommand cmd = new SqlCommand(query, conn);
 
-                foreach (DataRow row in classDataTable.Rows)
+                try
                 {
-                    GymClass gymClass = new GymClass(
-                        (int)row["ClassID"],
-                        row["ClassName"].ToString(),
-                        "",
-                        ""
-                    );
-                    classes.Add(gymClass);
+                    conn.Open();
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        GymClass gymClass = new GymClass(
+                            (int)reader["ClassID"],
+                            reader["ClassName"].ToString(),
+                            reader["Instructor"].ToString(),
+                            reader["Schedule"].ToString()
+                        );
+                        classes.Add(gymClass);
+                    }
                 }
+                catch (Exception ex)
+                {
+                    throw new Exception("Error fetching available classes: " + ex.Message);
+                }    
             }
-
             return classes;
         }
         // get details for join form
@@ -205,15 +217,31 @@ namespace Gym_Management_System_SDAM2
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO MemberClasses (MemberID, ClassID) VALUES (@MemberID, @ClassID)";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@MemberID", memberID);
-                cmd.Parameters.AddWithValue("@ClassID", classID);
+                // Check if the member is already enrolled 
+                string checkQuery = "SELECT COUNT(*) FROM MemberClasses WHERE MemberID = @MemberID AND ClassID = @ClassID";
+                SqlCommand checkCmd = new SqlCommand(checkQuery, conn);
+                checkCmd.Parameters.AddWithValue("@MemberID", memberID);
+                checkCmd.Parameters.AddWithValue("@ClassID", classID);
 
                 try
                 {
                     conn.Open();
-                    cmd.ExecuteNonQuery();
+                    int count = (int)checkCmd.ExecuteScalar(); 
+
+                    if (count == 0) 
+                    {
+                        string insertQuery = "INSERT INTO MemberClasses (MemberID, ClassID) VALUES (@MemberID, @ClassID)";
+                        SqlCommand insertCmd = new SqlCommand(insertQuery, conn);
+                        insertCmd.Parameters.AddWithValue("@MemberID", memberID);
+                        insertCmd.Parameters.AddWithValue("@ClassID", classID);
+                        insertCmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Class joined successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("You have already joined this class.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -221,5 +249,32 @@ namespace Gym_Management_System_SDAM2
                 }
             }
         }
+        // update edit profile details to database
+        public bool UpdateMemberProfile(Members member)
+        {
+            string query = "UPDATE Members SET FirstName = @FirstName, LastName = @LastName,DateOfBirth = @DateOfBirth, ContactNumber = @ContactNumber, City = @City, Email = @Email, " +
+                           "Username = @Username, Password = @Password, Gender = @Gender, MembershipType = @MembershipType WHERE UserID = @UserID";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@FirstName", member.FirstName);
+                command.Parameters.AddWithValue("@LastName", member.LastName);
+                command.Parameters.AddWithValue("@DateOfBirth", member.DateOfBirth);
+                command.Parameters.AddWithValue("@ContactNumber", member.ContactNumber);
+                command.Parameters.AddWithValue("@City", member.City);
+                command.Parameters.AddWithValue("@Email", member.Email);
+                command.Parameters.AddWithValue("@Username", member.Username);
+                command.Parameters.AddWithValue("@Password", member.Password);
+                command.Parameters.AddWithValue("@Gender", member.Gender);
+                command.Parameters.AddWithValue("@MembershipType", member.MembershipType);
+                command.Parameters.AddWithValue("@UserID", member.UserID);
+
+                connection.Open();
+                int rowsAffected = command.ExecuteNonQuery();
+                return rowsAffected > 0;
+            }
+        }
     }
+
 }

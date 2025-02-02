@@ -15,19 +15,57 @@ namespace Gym_Management_System_SDAM2
     {
         private string username;
         private string password;
+        private int _memberID;
 
         private ComboBox combClass;
         private Button btnJoinClass;
-        public MemJoinClass()
+
+        private DB_Helper _dbHelper;
+
+        //member join
+        public MemJoinClass(int memberID, string username, string password, string connectionString)
         {
             InitializeComponent();
             this.username = username;
             this.password = password;
+            _memberID = memberID;
 
-            combClass= new ComboBox();
+            _dbHelper = new DB_Helper(connectionString);
+
+            combClass = new ComboBox();
             btnJoinClass = new Button();
+
+            LoadClasses();
         }
 
+        private void LoadClasses()
+        {
+            try
+            {
+
+                List<GymClass> availableClasses = _dbHelper.GetAvailableClassesForComboBox();
+
+                // Clear any previous entries
+                combClass.Items.Clear();
+
+                // ComboBox with available classes
+
+                combClass.DataSource = availableClasses;
+                combClass.DisplayMember = "ClassName";
+                combClass.ValueMember = "ClassID";
+
+
+                // Set default selection
+                if (combClass.Items.Count > 0)
+                {
+                    combClass.SelectedIndex = 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading classes: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         private void listView1_SelectedIndexChanged(object sender, EventArgs e) { }
 
         private void MprofileLbl_Click(object sender, EventArgs e)
@@ -56,6 +94,32 @@ namespace Gym_Management_System_SDAM2
             MemberPayments memberPaymentsForm = new MemberPayments(username, password);
             memberPaymentsForm.Show();
             this.Hide();
+        }
+
+        private void conJoinBtn_Click(object sender, EventArgs e)
+        {
+            int selectedClassID = (int)combClass.SelectedValue;
+
+            // Save the member's class selection
+            try
+            {
+                _dbHelper.SaveMemberClassSelection(_memberID, selectedClassID); 
+                MessageBox.Show("You have successfully joined the class.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error joining the class: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            MemberClasses memberClassesForm = new MemberClasses(username, password);
+            memberClassesForm.Show();
+            this.Hide();
+
+        }
+
+        private void closeLable_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

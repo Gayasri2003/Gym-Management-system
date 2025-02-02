@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.conJoinBtn = new System.Windows.Forms.Button();
+            this.combClass = new System.Windows.Forms.ComboBox();
+            this.TopicLbl = new System.Windows.Forms.Label();
             this.DashPanel = new System.Windows.Forms.Panel();
             this.logoBox = new System.Windows.Forms.PictureBox();
             this.DPanel2 = new System.Windows.Forms.Panel();
@@ -40,9 +43,7 @@
             this.AttendLbl = new System.Windows.Forms.Label();
             this.MclassLbl = new System.Windows.Forms.Label();
             this.MprofileLbl = new System.Windows.Forms.Label();
-            this.TopicLbl = new System.Windows.Forms.Label();
-            this.combClass = new System.Windows.Forms.ComboBox();
-            this.conJoinBtn = new System.Windows.Forms.Button();
+            this.closeLable = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.DashPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
@@ -56,6 +57,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.closeLable);
             this.panel1.Controls.Add(this.conJoinBtn);
             this.panel1.Controls.Add(this.combClass);
             this.panel1.Controls.Add(this.TopicLbl);
@@ -64,6 +66,39 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(682, 489);
             this.panel1.TabIndex = 0;
+            // 
+            // conJoinBtn
+            // 
+            this.conJoinBtn.BackColor = System.Drawing.Color.MidnightBlue;
+            this.conJoinBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.conJoinBtn.ForeColor = System.Drawing.Color.White;
+            this.conJoinBtn.Location = new System.Drawing.Point(262, 385);
+            this.conJoinBtn.Name = "conJoinBtn";
+            this.conJoinBtn.Size = new System.Drawing.Size(151, 39);
+            this.conJoinBtn.TabIndex = 10;
+            this.conJoinBtn.Text = "Confirm Join";
+            this.conJoinBtn.UseVisualStyleBackColor = false;
+            this.conJoinBtn.Click += new System.EventHandler(this.conJoinBtn_Click);
+            // 
+            // combClass
+            // 
+            this.combClass.FormattingEnabled = true;
+            this.combClass.Location = new System.Drawing.Point(262, 132);
+            this.combClass.Name = "combClass";
+            this.combClass.Size = new System.Drawing.Size(356, 24);
+            this.combClass.TabIndex = 9;
+            // 
+            // TopicLbl
+            // 
+            this.TopicLbl.AutoSize = true;
+            this.TopicLbl.BackColor = System.Drawing.Color.RoyalBlue;
+            this.TopicLbl.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TopicLbl.ForeColor = System.Drawing.Color.White;
+            this.TopicLbl.Location = new System.Drawing.Point(240, 78);
+            this.TopicLbl.Name = "TopicLbl";
+            this.TopicLbl.Size = new System.Drawing.Size(220, 22);
+            this.TopicLbl.TabIndex = 8;
+            this.TopicLbl.Text = "Join for a new Gym Class :";
             // 
             // DashPanel
             // 
@@ -190,37 +225,18 @@
             this.MprofileLbl.Text = "Profile   ";
             this.MprofileLbl.Click += new System.EventHandler(this.MprofileLbl_Click);
             // 
-            // TopicLbl
+            // closeLable
             // 
-            this.TopicLbl.AutoSize = true;
-            this.TopicLbl.BackColor = System.Drawing.Color.RoyalBlue;
-            this.TopicLbl.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TopicLbl.ForeColor = System.Drawing.Color.White;
-            this.TopicLbl.Location = new System.Drawing.Point(240, 78);
-            this.TopicLbl.Name = "TopicLbl";
-            this.TopicLbl.Size = new System.Drawing.Size(220, 22);
-            this.TopicLbl.TabIndex = 8;
-            this.TopicLbl.Text = "Join for a new Gym Class :";
-            // 
-            // combClass
-            // 
-            this.combClass.FormattingEnabled = true;
-            this.combClass.Location = new System.Drawing.Point(262, 132);
-            this.combClass.Name = "combClass";
-            this.combClass.Size = new System.Drawing.Size(356, 24);
-            this.combClass.TabIndex = 9;
-            // 
-            // conJoinBtn
-            // 
-            this.conJoinBtn.BackColor = System.Drawing.Color.MidnightBlue;
-            this.conJoinBtn.Font = new System.Drawing.Font("Microsoft Tai Le", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.conJoinBtn.ForeColor = System.Drawing.Color.White;
-            this.conJoinBtn.Location = new System.Drawing.Point(262, 385);
-            this.conJoinBtn.Name = "conJoinBtn";
-            this.conJoinBtn.Size = new System.Drawing.Size(151, 39);
-            this.conJoinBtn.TabIndex = 10;
-            this.conJoinBtn.Text = "Confirm Join";
-            this.conJoinBtn.UseVisualStyleBackColor = false;
+            this.closeLable.AutoSize = true;
+            this.closeLable.BackColor = System.Drawing.Color.Red;
+            this.closeLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.closeLable.ForeColor = System.Drawing.Color.White;
+            this.closeLable.Location = new System.Drawing.Point(650, 9);
+            this.closeLable.Name = "closeLable";
+            this.closeLable.Size = new System.Drawing.Size(20, 20);
+            this.closeLable.TabIndex = 11;
+            this.closeLable.Text = "X";
+            this.closeLable.Click += new System.EventHandler(this.closeLable_Click);
             // 
             // MemJoinClass
             // 
@@ -262,5 +278,6 @@
         private System.Windows.Forms.Label TopicLbl;
         private System.Windows.Forms.ComboBox cmbClasses;
         private System.Windows.Forms.Button conJoinBtn;
+        private System.Windows.Forms.Label closeLable;
     }
 }
