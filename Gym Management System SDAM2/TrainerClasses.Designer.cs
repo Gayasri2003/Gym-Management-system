@@ -37,6 +37,7 @@
             this.homeLogout = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.closelabel = new System.Windows.Forms.Label();
             this.addclassBtn = new System.Windows.Forms.Button();
             this.classdeleteBtn = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
             this.classIDtextbox = new System.Windows.Forms.TextBox();
             this.classIDtext = new System.Windows.Forms.Label();
             this.classupdateBtn = new System.Windows.Forms.Button();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -91,7 +91,7 @@
             this.panel1.Controls.Add(this.pictureBox);
             this.panel1.Location = new System.Drawing.Point(0, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(129, 494);
+            this.panel1.Size = new System.Drawing.Size(128, 494);
             this.panel1.TabIndex = 4;
             // 
             // attendLink
@@ -174,6 +174,17 @@
             this.label1.Size = new System.Drawing.Size(104, 17);
             this.label1.TabIndex = 15;
             this.label1.Text = "Logged in as: ";
+            // 
+            // pictureBox
+            // 
+            this.pictureBox.Image = global::Gym_Management_System_SDAM2.Properties.Resources.icons8_user_100;
+            this.pictureBox.Location = new System.Drawing.Point(41, 9);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(0);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(40, 36);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox.TabIndex = 13;
+            this.pictureBox.TabStop = false;
             // 
             // closelabel
             // 
@@ -300,17 +311,6 @@
             this.classupdateBtn.Text = "Update Class";
             this.classupdateBtn.UseVisualStyleBackColor = true;
             this.classupdateBtn.Click += new System.EventHandler(this.classupdateBtn_Click);
-            // 
-            // pictureBox
-            // 
-            this.pictureBox.Image = global::Gym_Management_System_SDAM2.Properties.Resources.icons8_user_100;
-            this.pictureBox.Location = new System.Drawing.Point(41, 9);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(0);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(40, 36);
-            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox.TabIndex = 13;
-            this.pictureBox.TabStop = false;
             // 
             // TrainerClasses
             // 
