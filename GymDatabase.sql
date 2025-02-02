@@ -73,5 +73,37 @@ CREATE TABLE MemberClasses (
     PRIMARY KEY (MemberID, ClassID)
 );
 
-
 SELECT*FROM MemberClasses
+
+
+CREATE TABLE Attendance (
+    AttendanceId INT IDENTITY(1,1) PRIMARY KEY,
+    MemberId INT NOT NULL,
+    Date DATE NOT NULL DEFAULT GETDATE(),
+    IsPresent BIT NOT NULL,
+    FOREIGN KEY (MemberID) REFERENCES Members(MemberID)
+);
+ALTER TABLE Attendance 
+ADD UserID INT NOT NULL;
+ALTER TABLE Attendance 
+ADD FOREIGN KEY (UserID) REFERENCES Users(UserID);
+
+
+SELECT*FROM Attendance
+
+CREATE TABLE Payments (
+    PaymentID INT PRIMARY KEY IDENTITY(1,1),
+	Username VARCHAR(100) NOT NULL,
+    Amount DECIMAL(10,2),
+    PaymentDate DATETIME,
+    PaymentMethod VARCHAR(50));
+	ALTER TABLE Payments DROP CONSTRAINT [FK_Payments_Users];
+    ALTER TABLE Payments
+    ADD UserID INT NOT NULL;
+
+    ALTER TABLE Payments
+	ADD FOREIGN KEY (UserID) REFERENCES Users(UserID);
+
+
+SELECT*FROM Payments
+
