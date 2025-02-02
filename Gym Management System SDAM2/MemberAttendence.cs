@@ -7,40 +7,47 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace Gym_Management_System_SDAM2
 {
     public partial class MemberAttendence : Form
     {
-        public MemberAttendence()
+
+        private string username;
+        private string password;
+        public MemberAttendence(string username, string password)
         {
             InitializeComponent();
+            this.username = username;
+            this.password = password;
         }
+
 
         private void MprofileLbl_Click(object sender, EventArgs e)
         {
-            MemberProfile memberProfileForm = new MemberProfile();
+            MemberProfile memberProfileForm = new MemberProfile(username, password);
             memberProfileForm.Show();
             this.Hide();
         }
 
         private void MclassLbl_Click(object sender, EventArgs e)
         {
-            MemberClasses memberClassesForm = new MemberClasses();
+            MemberClasses memberClassesForm = new MemberClasses(username, password);
             memberClassesForm.Show();
             this.Hide();
         }
 
         private void AttendLbl_Click(object sender, EventArgs e)
         {
-            MemberAttendence memberAttendenceForm = new MemberAttendence();
+            MemberAttendence memberAttendenceForm = new MemberAttendence(username, password);
             memberAttendenceForm.Show();
             this.Hide();
         }
 
         private void MpaymentsLbl_Click(object sender, EventArgs e)
         {
-            MemberPayments memberPaymentsForm = new MemberPayments();
+            MemberPayments memberPaymentsForm = new MemberPayments(username, password);
             memberPaymentsForm.Show();
             this.Hide();
         }

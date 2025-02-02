@@ -79,6 +79,7 @@
             this.JoinClassBtn.TabIndex = 6;
             this.JoinClassBtn.Text = "Join Now";
             this.JoinClassBtn.UseVisualStyleBackColor = false;
+            this.JoinClassBtn.Click += new System.EventHandler(this.JoinClassBtn_Click);
             // 
             // dataGridView1
             // 
@@ -87,7 +88,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(405, 315);
+            this.dataGridView1.Size = new System.Drawing.Size(405, 223);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 

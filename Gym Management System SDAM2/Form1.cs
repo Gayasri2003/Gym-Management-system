@@ -9,12 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace Gym_Management_System_SDAM2
 {
     public partial class LoginForm : Form
     {
-        string connectionString = "Server=(local)\\SQLEXPRESS;Database=GymDatabase;Integrated Security=True;TrustServerCertificate=True";
+        private string connectionString = @"Data Source=DESKTOP-28I7HML\SQLEXPRESS;Initial Catalog=Gym_Management_System_SDAM2;Integrated Security=True;Encrypt=True;TrustServerCertificate=True;";
         public LoginForm()
         {
             InitializeComponent();
@@ -51,7 +50,7 @@ namespace Gym_Management_System_SDAM2
         {
             Application.Exit();
         }
-
+        // login button
         private void loginBtn_Click(object sender, EventArgs e)
         {
             string username = UsernameTxt.Text;
@@ -66,55 +65,59 @@ namespace Gym_Management_System_SDAM2
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT Role FROM Users WHERE Username = @Username AND Password = @Password";
+                string query = "SELECT UserId, Role FROM Users WHERE Username = @Username AND Password = @Password";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@Username", username);
                     command.Parameters.AddWithValue("@Password", password);
 
-                    var result = command.ExecuteScalar();
-                    if (result != null)
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        string role = result.ToString();
-
-                        //navigate according to the role
-                        if (role == "Member")
+                        if (reader.Read())
                         {
-                            MemberProfile memberProfile = new MemberProfile();
-                            memberProfile.Show();
-                            this.Hide();
+                            int userId = Convert.ToInt32(reader["UserID"]);
+                            string role = reader["Role"].ToString();
+
+                            //navigate according to the role
+                            if (role == "Member")
+                            {
+                                MemberProfile memberProfileForm = new MemberProfile(username, password);
+                                memberProfileForm.Show();
+                                this.Hide();
+                            }
+                            else if (role == "Trainer")
+                            {
+
+                                TrainerProfile trainerProfile = new TrainerProfile();
+                                trainerProfile.Show();
+                                this.Hide();
+                            }
                         }
-                        else if (role == "Trainer")
+                        //if user not found,cannot login message 
+                        else
                         {
-                            TrainerProfile trainerProfile = new TrainerProfile(username); // Pass username to TrainerProfile
-                            trainerProfile.Show();
-                            this.Hide();
+                            MessageBox.Show("Can't log in, please register first.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
-
-
                     }
-                    //if user not found,cannot login message 
-                    else
-                    {
-                        MessageBox.Show("Can't log in, please register first.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                }
+
+            }
+        }
+
+            // display password 
+            private void showPcheck_CheckedChanged(object sender, EventArgs e)
+            {
+                if (showPcheck.Checked)
+                {
+                    // Show password
+                    passwdTxt.PasswordChar = '\0';
+                }
+                else
+                {
+                    // Hide password
+                    passwdTxt.PasswordChar = '*';
                 }
             }
         }
+    } 
 
-        // display password 
-        private void showPcheck_CheckedChanged(object sender, EventArgs e)
-        {
-            if (showPcheck.Checked)
-            {
-                // Show password
-                passwdTxt.PasswordChar = '\0';
-            }
-            else
-            {
-                // Hide password
-                passwdTxt.PasswordChar = '*'; 
-            }
-        }
-    }
-}

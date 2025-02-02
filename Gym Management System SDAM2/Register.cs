@@ -14,7 +14,7 @@ namespace Gym_Management_System_SDAM2
 {
     public partial class Register : Form
     {
-        string connectionString = "Server=(local)\\SQLEXPRESS;Database=GymDatabase;Integrated Security=True;TrustServerCertificate=True";
+        private string connectionString = @"Data Source=DESKTOP-28I7HML\SQLEXPRESS;Initial Catalog=Gym_Management_System_SDAM2;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         public Register()
         {
             InitializeComponent();
@@ -60,8 +60,36 @@ namespace Gym_Management_System_SDAM2
                 string email = EmailTxt.Text;
                 string username = UserNtxt.Text;
                 string password = PassWtxt.Text;
-                string gender = genBtn1.Checked ? "Male" : "Female";
-                string role = roleBtn1.Checked ? "Trainer" : "Member";
+                string gender = string.Empty;
+                if (genBtn1.Checked)
+                {
+                    gender = "Male";
+                }
+                else if (genBtn2.Checked)
+                {
+                    gender = "Female";
+                }
+                else
+                {
+                    MessageBox.Show("Please select a gender.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                string role = string.Empty;
+                if (roleBtn1.Checked)
+                {
+                    role = "Trainer";
+                }
+                else if (roleBtn2.Checked)
+                {
+                    role = "Member";
+                }
+                else
+                {
+                    MessageBox.Show("Please select a role.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return; 
+                }
+
+
 
                 // Validate input
                 if (string.IsNullOrEmpty(firstName) || string.IsNullOrEmpty(lastName) || string.IsNullOrEmpty(contactNumber) ||
@@ -70,6 +98,8 @@ namespace Gym_Management_System_SDAM2
                     MessageBox.Show("Please fill in all fields.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+
+
 
 
                 // add to database
@@ -96,6 +126,8 @@ namespace Gym_Management_System_SDAM2
                         command.Parameters.AddWithValue("@Role", role);
 
                         int userId = Convert.ToInt32(command.ExecuteScalar());
+
+
 
 
                         // if user is a member
@@ -128,7 +160,7 @@ namespace Gym_Management_System_SDAM2
                 {
                     MessageBox.Show("Registration Successful! Waiting for admin approval.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Hide();
-                    WaitingForm waitingForm = new WaitingForm(); // Replace with the actual waiting form
+                    WaitingForm waitingForm = new WaitingForm();
                     waitingForm.ShowDialog();
                     this.Close();
                 }

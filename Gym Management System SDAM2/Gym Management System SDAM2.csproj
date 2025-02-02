@@ -32,9 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject>Gym_Management_System_SDAM2.Program</StartupObject>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -62,6 +59,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="GymClass.cs" />
+    <Compile Include="Members.cs" />
     <Compile Include="MemberAttendence.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,7 +91,6 @@
     <Compile Include="MemJoinClass.Designer.cs">
       <DependentUpon>MemJoinClass.cs</DependentUpon>
     </Compile>
-    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.cs">
@@ -149,18 +147,6 @@
     <EmbeddedResource Include="MemJoinClass.resx">
       <DependentUpon>MemJoinClass.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="obj\Debug\Gym_Management_System_SDAM2.EditMemProfile.resources" />
-    <EmbeddedResource Include="obj\Debug\Gym_Management_System_SDAM2.LoginForm.resources" />
-    <EmbeddedResource Include="obj\Debug\Gym_Management_System_SDAM2.MemberAttendence.resources" />
-    <EmbeddedResource Include="obj\Debug\Gym_Management_System_SDAM2.MemberClasses.resources" />
-    <EmbeddedResource Include="obj\Debug\Gym_Management_System_SDAM2.MemberPayments.resources" />
-    <EmbeddedResource Include="obj\Debug\Gym_Management_System_SDAM2.MemberProfile.resources" />
-    <EmbeddedResource Include="obj\Debug\Gym_Management_System_SDAM2.MemJoinClass.resources" />
-    <EmbeddedResource Include="obj\Debug\Gym_Management_System_SDAM2.Properties.Resources.resources" />
-    <EmbeddedResource Include="obj\Debug\Gym_Management_System_SDAM2.Register.resources" />
-    <EmbeddedResource Include="obj\Debug\Gym_Management_System_SDAM2.TrainerAttendence.resources" />
-    <EmbeddedResource Include="obj\Debug\Gym_Management_System_SDAM2.TrainerClasses.resources" />
-    <EmbeddedResource Include="obj\Debug\Gym_Management_System_SDAM2.TrainerProfile.resources" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -178,12 +164,6 @@
     <EmbeddedResource Include="TrainerProfile.resx">
       <DependentUpon>TrainerProfile.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="bin\Debug\Gym Management System SDAM2.exe.config" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\Gym Management System SDAM2.csproj.AssemblyReference.cache" />
-    <None Include="obj\Debug\Gym Management System SDAM2.csproj.CoreCompileInputs.cache" />
-    <None Include="obj\Debug\Gym Management System SDAM2.csproj.GenerateResource.cache" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -228,15 +208,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Screenshot 2025-01-23 183029.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\Gym Management System SDAM2.exe" />
-    <Content Include="bin\Debug\Gym Management System SDAM2.pdb" />
-    <Content Include="Gym_Management_System.sql" />
-    <Content Include="obj\Debug\Gym Management System SDAM2.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\Gym Management System SDAM2.exe" />
-    <Content Include="obj\Debug\Gym Management System SDAM2.pdb" />
-    <Content Include="obj\Debug\TempPE\Properties.Resources.Designer.cs.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

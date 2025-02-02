@@ -7,6 +7,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
@@ -51,12 +52,10 @@ namespace Gym_Management_System_SDAM2
                 {
                     gender = value;
                 }
-                else
-                {
-                    throw new ArgumentException("Invalid gender selection.");
-                }
+                
             }
         }
+
         private string role;
         public string Role
         {
@@ -81,14 +80,11 @@ namespace Gym_Management_System_SDAM2
             get { return password; }
             private set
             {
-                if (value.Length >= 8)
+                if (value.Length >= 6)
                 {
                     password = value;
                 }
-                else
-                {
-                    throw new ArgumentException("Password must be at least 8 characters long.");
-                }
+                
             }
         }
 
@@ -107,7 +103,6 @@ namespace Gym_Management_System_SDAM2
         }
 
         // Constructor for User class
-
         public User(string firstName, string lastName, DateTime dateOfBirth, string contactNumber, string city, string email, string username, string password, string gender, string role)
         {
             FirstName = firstName;
@@ -117,10 +112,20 @@ namespace Gym_Management_System_SDAM2
             City = city;
             Email = email;
             Username = username;
-            SetPassword(password); // Uses the SetPassword method
+            SetPassword(password); 
             Gender = gender;
             Role = role;
         }
-
+        public void DisplayUserInfo()
+        {
+            Console.WriteLine($"Name: {FirstName} {LastName}");
+            Console.WriteLine($"Date of Birth: {DateOfBirth.ToShortDateString()}");
+            Console.WriteLine($"Contact: {ContactNumber}");
+            Console.WriteLine($"Email: {Email}");
+            Console.WriteLine($"City: {City}");
+            Console.WriteLine($"Gender: {Gender}");
+            Console.WriteLine($"Username: {Username}");
+            Console.WriteLine($"Role: {Role}");
+        }
     }
 }

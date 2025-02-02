@@ -76,7 +76,12 @@ namespace Gym_Management_System_SDAM2
         //Navbar click functionality
         private void homeLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
+            // Open the Home form
+            TrainerProfile homeForm = new TrainerProfile();
+            homeForm.Show();
+
+            // Close or hide the current form
+            this.Hide();
         }
 
         private void classLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
