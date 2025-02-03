@@ -78,10 +78,22 @@ namespace Gym_Management_System_SDAM2
         {
             try
             {
-                string username = textBox1.Text;
-                decimal amount = decimal.Parse(textBox2.Text);
+
+                if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text) || comboBox1.SelectedItem == null)
+                {
+                    MessageBox.Show("Please fill in all payment details.", "Missing Information", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string username = textBox1.Text.Trim();
+                if (!decimal.TryParse(textBox2.Text, out decimal amount) || amount <= 0)
+                {
+                    MessageBox.Show("Invalid amount. Please enter a positive number.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 string method = comboBox1.SelectedItem.ToString();
-                DateTime paymentDate = dateTimePicker1.Value; 
+                DateTime paymentDate = dateTimePicker1.Value;
 
                 // Add Payment
                 int result = DB_Helper.AddPayment(username, amount, paymentDate, method);
@@ -100,6 +112,12 @@ namespace Gym_Management_System_SDAM2
                 MessageBox.Show($"Error: {ex.Message}", "Payment Failed", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox1.Items.Add("Cash");
+            comboBox1.Items.Add("Card");
+            comboBox1.SelectedIndex = 0;
+        }
     }
 }

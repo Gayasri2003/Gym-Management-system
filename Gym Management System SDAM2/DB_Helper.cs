@@ -401,37 +401,53 @@ namespace Gym_Management_System_SDAM2
             throw new NotImplementedException();
         }
 
-        //get member id
-        private static int GetMemberIDByUsername(string username)
+        
+        public DataTable GetPaymentsByUserID(int userID)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "SELECT MemberID FROM Members WHERE Username = @Username";
+                string query = "SELECT * FROM Payments WHERE UserID = @UserID";
+
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {
-                    cmd.Parameters.AddWithValue("@Username", username);
-                    con.Open();
-                    var result = cmd.ExecuteScalar();
-                    return result != null ? Convert.ToInt32(result) : -1;
+                    cmd.Parameters.AddWithValue("@UserID", userID); // Ensure @UserID is properly declared
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        return dt;
+                    }
                 }
             }
         }
-
         // Add Payment 
         public static int AddPayment(string username, decimal amount, DateTime paymentDate, string paymentMethod)
         {
             using (SqlConnection con = new SqlConnection(connectionString))
             {
-                string query = "INSERT INTO Payments (MemberID, Amount, PaymentDate, PaymentMethod) VALUES (@MemberID, @Amount, @PaymentDate, @PaymentMethod)";
-                using (SqlCommand cmd = new SqlCommand(query, con))
-                {
-                    cmd.Parameters.AddWithValue("@Username", username);
-                    cmd.Parameters.AddWithValue("@Amount", amount);
-                    cmd.Parameters.AddWithValue("@PaymentDate", paymentDate);
-                    cmd.Parameters.AddWithValue("@PaymentMethod", paymentMethod);
+                con.Open();
 
-                    con.Open();
-                    return cmd.ExecuteNonQuery(); 
+                string getMemberIDQuery = "SELECT MemberID FROM Members WHERE UserID = (SELECT UserID FROM Users WHERE Username = @Username)";
+
+                using (SqlCommand getMemberCmd = new SqlCommand(getMemberIDQuery, con))
+                {
+                    getMemberCmd.Parameters.AddWithValue("@Username", username);
+
+                    var memberID = getMemberCmd.ExecuteScalar();
+                    if (memberID == null) return 0;
+
+                    string insertPaymentQuery = "INSERT INTO Payments (UserID, Amount, PaymentDate, PaymentMethod) VALUES (@UserID, @Amount, @PaymentDate, @PaymentMethod)";
+
+                    using (SqlCommand insertCmd = new SqlCommand(insertPaymentQuery, con))
+                    {
+                        insertCmd.Parameters.AddWithValue("@UserID", Convert.ToInt32(memberID));
+                        insertCmd.Parameters.AddWithValue("@Amount", amount);
+                        insertCmd.Parameters.AddWithValue("@PaymentDate", paymentDate);
+                        insertCmd.Parameters.AddWithValue("@PaymentMethod", paymentMethod);
+
+                        return insertCmd.ExecuteNonQuery();
+                    }
                 }
             }
         }
@@ -442,11 +458,11 @@ namespace Gym_Management_System_SDAM2
             using (SqlConnection con = new SqlConnection(connectionString))
             {
                 string query = @"
-                SELECT p.PaymentID, m.Username, p.Amount, p.PaymentDate, p.PaymentMethod
-                FROM Payments p
-                INNER JOIN Members m ON p.MemberID = m.MemberID
-                WHERE m.Username = @Username
-                ORDER BY p.PaymentDate DESC";
+                SELECT p.PaymentID, u.Username, p.Amount, p.PaymentDate, p.PaymentMethod
+                 FROM Payments p
+                 INNER JOIN Users u ON p.UserID = u.UserID
+                 WHERE u.Username = @Username
+                 ORDER BY p.PaymentDate DESC";
 
                 using (SqlCommand cmd = new SqlCommand(query, con))
                 {

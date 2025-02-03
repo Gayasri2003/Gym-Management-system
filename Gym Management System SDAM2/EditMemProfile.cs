@@ -18,12 +18,12 @@ namespace Gym_Management_System_SDAM2
         private string password;
         private DB_Helper dbHelper;
         private Members currentMember;
-        public EditMemProfile(string username, string password, DB_Helper dbHelper, Members currentMember)
+        public EditMemProfile(string username, string password, DB_Helper dbHelper, Members memberProfile)
         {
             InitializeComponent();
             this.username = username;
             this.password = password;
-            this.currentMember = currentMember;
+            this.currentMember = memberProfile;
             this.dbHelper = dbHelper;
             LoadMemberData();
 
@@ -113,7 +113,7 @@ namespace Gym_Management_System_SDAM2
             currentMember.MembershipType = txtMemTyp.Text;
 
         
-            bool success = dbHelper.UpdateMemberProfile();
+            bool success = dbHelper.UpdateMemberProfile(currentMember);
 
             if (success)
             {

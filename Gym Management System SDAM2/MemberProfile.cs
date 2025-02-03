@@ -15,16 +15,14 @@ namespace Gym_Management_System_SDAM2
         private string username;
         private string password;
         private Members memberProfile;
-       // private Members currentMember;
         private DB_Helper dbHelper;
 
 
-        public MemberProfile(string username, string password )//Members currentMember)
+        public MemberProfile(string username, string password )
         {
             InitializeComponent();
             this.username = username;
             this.password = password;
-            //this.currentMember = currentMember;
             dbHelper = new DB_Helper(@"Data Source=(local)\SQLEXPRESS;Initial Catalog=GymDatabase;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
             LoadMemberProfile();
         }
@@ -93,15 +91,15 @@ namespace Gym_Management_System_SDAM2
         {
             MemberPayments memberPaymentsForm = new MemberPayments(username, password);
             memberPaymentsForm.Show();
-            this.Hide();
+            
         }
 
         // navigate for the edit profile form
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            EditMemProfile editMemProfileForm = new EditMemProfile(username, password);
+            EditMemProfile editMemProfileForm = new EditMemProfile(username, password, dbHelper, memberProfile);
             editMemProfileForm.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
